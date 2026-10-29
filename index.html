@@ -1,0 +1,3183 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0" />
+  <title>InterviewReady — Your Personal Interview Coach</title>
+  <meta name="description" content="Practise Smarter. Speak Confidently. Get Career Ready. Complete personal interview preparation platform with technical Q&A, timed aptitude tests, HR guides, voice & text mock interviews, and fresher resume builder." />
+  <meta name="theme-color" content="#2563eb" />
+  <meta property="og:title" content="InterviewReady — Your Personal Interview Coach" />
+  <meta property="og:description" content="Prepare for campus placements, IT and non-IT job interviews with mock interviews, question banks, and resume tools." />
+  <meta property="og:type" content="website" />
+  
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+
+  <style>
+    /* CSS RESET & MODERN FOUNDATION */
+    *, *::before, *::after {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    :root {
+      --primary: #2563eb;
+      --primary-hover: #1d4ed8;
+      --primary-light: #eff6ff;
+      --primary-border: #bfdbfe;
+      --slate-50: #f8fafc;
+      --slate-100: #f1f5f9;
+      --slate-200: #e2e8f0;
+      --slate-300: #cbd5e1;
+      --slate-400: #94a3b8;
+      --slate-500: #64748b;
+      --slate-600: #475569;
+      --slate-700: #334155;
+      --slate-800: #1e293b;
+      --slate-900: #0f172a;
+      --emerald-50: #ecfdf5;
+      --emerald-600: #059669;
+      --emerald-700: #047857;
+      --amber-50: #fffbeb;
+      --amber-600: #d97706;
+      --amber-700: #b45309;
+      --rose-50: #fff1f2;
+      --rose-600: #e11d48;
+      --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+      --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    body {
+      font-family: var(--font-sans);
+      background-color: var(--slate-50);
+      color: var(--slate-900);
+      line-height: 1.5;
+      -webkit-font-smoothing: antialiased;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      padding-bottom: 72px; /* Space for mobile bottom bar */
+    }
+
+    @media (min-width: 1024px) {
+      body {
+        padding-bottom: 0;
+      }
+    }
+
+    /* Container */
+    .container {
+      width: 100%;
+      max-width: 1200px;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: 1rem;
+      padding-right: 1rem;
+    }
+
+    /* TYPOGRAPHY UTILITIES */
+    h1, h2, h3, h4, h5 {
+      color: var(--slate-900);
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+    .text-muted { color: var(--slate-500); }
+    .text-primary { color: var(--primary); }
+    .text-emerald { color: var(--emerald-600); }
+    .text-amber { color: var(--amber-600); }
+    .text-rose { color: var(--rose-600); }
+    .font-mono { font-family: var(--font-mono); }
+
+    /* BUTTONS */
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.5rem;
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      font-weight: 600;
+      padding: 0.5rem 1rem;
+      border-radius: 0.75rem;
+      border: 1px solid transparent;
+      cursor: pointer;
+      transition: all 0.15s ease-in-out;
+      text-decoration: none;
+      white-space: nowrap;
+      min-height: 40px;
+    }
+    .btn:active {
+      transform: scale(0.98);
+    }
+    .btn-primary {
+      background-color: var(--primary);
+      color: #ffffff;
+      box-shadow: 0 1px 2px rgba(37, 99, 235, 0.2);
+    }
+    .btn-primary:hover {
+      background-color: var(--primary-hover);
+    }
+    .btn-secondary {
+      background-color: #ffffff;
+      color: var(--slate-700);
+      border-color: var(--slate-200);
+    }
+    .btn-secondary:hover {
+      background-color: var(--slate-100);
+      color: var(--slate-900);
+    }
+    .btn-outline-primary {
+      background-color: var(--primary-light);
+      color: var(--primary);
+      border-color: var(--primary-border);
+    }
+    .btn-outline-primary:hover {
+      background-color: #dbeafe;
+    }
+    .btn-sm {
+      padding: 0.35rem 0.75rem;
+      font-size: 0.75rem;
+      min-height: 34px;
+      border-radius: 0.5rem;
+    }
+    .btn-danger-light {
+      background-color: var(--rose-50);
+      color: var(--rose-600);
+      border-color: #fecdd3;
+    }
+    .btn-danger-light:hover {
+      background-color: #ffe4e6;
+    }
+
+    /* CARD STYLES */
+    .card {
+      background-color: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: 1rem;
+      padding: 1.25rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.03);
+    }
+    .card-hover:hover {
+      border-color: var(--primary-border);
+      box-shadow: 0 4px 12px rgba(37, 99, 235, 0.06);
+      transform: translateY(-1px);
+    }
+
+    /* TOP BAR */
+    .top-header {
+      position: sticky;
+      top: 0;
+      z-index: 40;
+      background-color: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--slate-200);
+    }
+    .header-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      height: 64px;
+      gap: 1.5rem;
+    }
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 0.625rem;
+      background: none;
+      border: none;
+      cursor: pointer;
+      text-align: left;
+    }
+    .logo-badge {
+      width: 36px;
+      height: 36px;
+      background: linear-gradient(135deg, #2563eb, #1d4ed8);
+      color: #ffffff;
+      font-weight: 800;
+      font-size: 1.125rem;
+      border-radius: 0.625rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      box-shadow: 0 2px 6px rgba(37, 99, 235, 0.25);
+    }
+    .brand-name {
+      font-size: 1.125rem;
+      font-weight: 800;
+      letter-spacing: -0.03em;
+      color: var(--slate-900);
+    }
+    .brand-sub {
+      font-size: 0.6875rem;
+      color: var(--slate-500);
+      font-weight: 500;
+      display: none;
+    }
+    @media (min-width: 640px) {
+      .brand-sub { display: block; }
+    }
+
+    /* DESKTOP NAV */
+    .desktop-nav {
+      display: none;
+      align-items: center;
+      gap: 1.25rem;
+    }
+    @media (min-width: 1024px) {
+      .desktop-nav { display: flex; }
+    }
+    .nav-link {
+      background: none;
+      border: none;
+      font-family: var(--font-sans);
+      font-size: 0.875rem;
+      font-weight: 500;
+      color: var(--slate-600);
+      cursor: pointer;
+      padding: 0.35rem 0.1rem;
+      transition: color 0.15s ease;
+      white-space: nowrap;
+    }
+    .nav-link:hover { color: var(--primary); }
+    .nav-link.active {
+      color: var(--primary);
+      font-weight: 700;
+      border-bottom: 2px solid var(--primary);
+    }
+
+    /* MOBILE BOTTOM NAV */
+    .bottom-nav {
+      position: fixed;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 62px;
+      background-color: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-top: 1px solid var(--slate-200);
+      z-index: 40;
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      align-items: center;
+      max-width: 480px;
+      margin: 0 auto;
+    }
+    @media (min-width: 1024px) {
+      .bottom-nav { display: none; }
+    }
+    .bottom-tab {
+      background: none;
+      border: none;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: var(--slate-500);
+      cursor: pointer;
+      height: 100%;
+      min-height: 48px;
+      font-size: 0.625rem;
+      font-weight: 600;
+      gap: 3px;
+      transition: color 0.15s ease;
+    }
+    .bottom-tab svg { width: 20px; height: 20px; }
+    .bottom-tab.active {
+      color: var(--primary);
+      font-weight: 700;
+    }
+    .bottom-tab.active svg {
+      stroke-width: 2.5;
+    }
+
+    /* HERO BANNER */
+    .hero-banner {
+      background: linear-gradient(135deg, #1e3a8a 0%, #1d4ed8 50%, #0f172a 100%);
+      color: #ffffff;
+      border-radius: 1.5rem;
+      padding: 2rem 1.5rem;
+      box-shadow: 0 10px 25px rgba(30, 58, 138, 0.15);
+      margin-top: 1.5rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    @media (min-width: 768px) {
+      .hero-banner { padding: 3rem 2.5rem; }
+    }
+    .hero-badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: rgba(255, 255, 255, 0.12);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      border-radius: 9999px;
+      padding: 0.25rem 0.75rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      color: #bfdbfe;
+      margin-bottom: 1rem;
+    }
+    .hero-title {
+      font-size: 1.75rem;
+      font-weight: 800;
+      line-height: 1.2;
+      color: #ffffff;
+      margin-bottom: 0.75rem;
+    }
+    @media (min-width: 768px) {
+      .hero-title { font-size: 2.5rem; }
+    }
+    .hero-desc {
+      font-size: 0.875rem;
+      color: #dbeafe;
+      max-width: 600px;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+    }
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    /* READINESS BAR */
+    .readiness-strip {
+      background-color: #ffffff;
+      border: 1px solid var(--slate-200);
+      border-radius: 1.25rem;
+      padding: 1.25rem;
+      margin-bottom: 2rem;
+    }
+    .readiness-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1.25rem;
+      align-items: center;
+    }
+    @media (min-width: 768px) {
+      .readiness-grid { grid-template-columns: 240px 1fr; }
+    }
+    .dial-card {
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+      border-bottom: 1px solid var(--slate-100);
+      padding-bottom: 1rem;
+    }
+    @media (min-width: 768px) {
+      .dial-card {
+        border-bottom: none;
+        border-right: 1px solid var(--slate-100);
+        padding-bottom: 0;
+        padding-right: 1rem;
+      }
+    }
+    .dial-circle {
+      width: 68px;
+      height: 68px;
+      border-radius: 1rem;
+      background-color: var(--primary-light);
+      border: 1px solid var(--primary-border);
+      color: var(--primary);
+      font-size: 1.5rem;
+      font-weight: 800;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-variant-numeric: tabular-nums;
+      flex-shrink: 0;
+    }
+    .progress-bars-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .progress-bars-grid { grid-template-columns: repeat(4, 1fr); }
+    }
+    .p-bar-wrap {
+      width: 100%;
+      height: 8px;
+      background-color: var(--slate-100);
+      border-radius: 9999px;
+      overflow: hidden;
+      margin-top: 4px;
+    }
+    .p-bar-fill {
+      height: 100%;
+      border-radius: 9999px;
+      transition: width 0.3s ease;
+    }
+
+    /* GRID LAYOUTS */
+    .grid-1-2 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .grid-1-2 { grid-template-columns: repeat(2, 1fr); }
+    }
+    .grid-1-3 {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    @media (min-width: 640px) {
+      .grid-1-3 { grid-template-columns: repeat(2, 1fr); }
+    }
+    @media (min-width: 1024px) {
+      .grid-1-3 { grid-template-columns: repeat(3, 1fr); }
+    }
+
+    /* TAGS & PILLS */
+    .tag {
+      font-size: 0.6875rem;
+      font-weight: 600;
+      padding: 0.2rem 0.5rem;
+      border-radius: 0.375rem;
+      display: inline-block;
+    }
+    .tag-blue { background-color: var(--primary-light); color: var(--primary); }
+    .tag-green { background-color: var(--emerald-50); color: var(--emerald-700); }
+    .tag-amber { background-color: var(--amber-50); color: var(--amber-700); }
+    .tag-slate { background-color: var(--slate-100); color: var(--slate-700); }
+
+    /* FORM INPUTS */
+    input[type="text"], input[type="email"], select, textarea {
+      width: 100%;
+      font-family: var(--font-sans);
+      font-size: 0.8125rem;
+      padding: 0.625rem 0.875rem;
+      border-radius: 0.625rem;
+      border: 1px solid var(--slate-200);
+      background-color: #ffffff;
+      color: var(--slate-800);
+      outline: none;
+      transition: border-color 0.15s ease, box-shadow 0.15s ease;
+    }
+    input:focus, select:focus, textarea:focus {
+      border-color: var(--primary);
+      box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+    }
+
+    /* MODAL */
+    .modal-overlay {
+      position: fixed;
+      inset: 0;
+      background-color: rgba(15, 23, 42, 0.65);
+      backdrop-filter: blur(4px);
+      z-index: 50;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 1rem;
+    }
+    .modal-box {
+      background-color: #ffffff;
+      border-radius: 1.25rem;
+      max-width: 560px;
+      width: 100%;
+      max-height: 90vh;
+      overflow-y: auto;
+      box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.15);
+      border: 1px solid var(--slate-200);
+    }
+    .modal-header {
+      padding: 1.25rem;
+      border-bottom: 1px solid var(--slate-100);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    /* CODE BLOCK */
+    pre code {
+      font-family: var(--font-mono);
+      font-size: 0.75rem;
+      line-height: 1.6;
+    }
+
+    /* RESUME A4 DOCUMENT */
+    .resume-a4-preview {
+      width: 100%;
+      max-width: 780px;
+      background-color: #ffffff;
+      padding: 2.5rem 2rem;
+      border: 1px solid var(--slate-300);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+      border-radius: 0.5rem;
+      margin: 0 auto;
+      font-size: 0.8125rem;
+      line-height: 1.5;
+      color: var(--slate-900);
+    }
+    .resume-header {
+      border-bottom: 2px solid #1e3a8a;
+      padding-bottom: 1rem;
+      margin-bottom: 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+    @media (min-width: 640px) {
+      .resume-header {
+        flex-direction: row;
+        align-items: flex-end;
+        justify-content: space-between;
+      }
+    }
+    .resume-section-title {
+      font-size: 0.75rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      color: #1e3a8a;
+      border-bottom: 1px solid var(--slate-200);
+      padding-bottom: 0.25rem;
+      margin-top: 1rem;
+      margin-bottom: 0.5rem;
+    }
+
+    /* PRINT STYLES */
+    @media print {
+      body {
+        background-color: #ffffff !important;
+        padding: 0 !important;
+      }
+      .no-print {
+        display: none !important;
+      }
+      .resume-a4-preview {
+        border: none !important;
+        box-shadow: none !important;
+        padding: 0 !important;
+        max-width: 100% !important;
+      }
+      @page {
+        size: A4;
+        margin: 10mm;
+      }
+    }
+
+    /* HORIZONTAL SCROLLER FOR TOPICS */
+    .horizontal-scroll {
+      display: flex;
+      gap: 0.5rem;
+      overflow-x: auto;
+      padding-bottom: 0.5rem;
+      -webkit-overflow-scrolling: touch;
+    }
+    .horizontal-scroll::-webkit-scrollbar {
+      height: 4px;
+    }
+    .horizontal-scroll::-webkit-scrollbar-thumb {
+      background: var(--slate-300);
+      border-radius: 9999px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- TOP BAR (Single row, 3-zone contract) -->
+  <header class="top-header no-print">
+    <div class="container header-inner">
+      
+      <!-- Zone 1: Wordmark -->
+      <button onclick="switchTab('dashboard')" class="brand-logo" aria-label="Go to Dashboard">
+        <div class="logo-badge">IR</div>
+        <div>
+          <div class="brand-name">InterviewReady</div>
+          <div class="brand-sub">Personal Interview Coach</div>
+        </div>
+      </button>
+
+      <!-- Zone 2: Navigation Links -->
+      <nav class="desktop-nav">
+        <button onclick="switchTab('dashboard')" id="nav-btn-dashboard" class="nav-link active">Dashboard</button>
+        <button onclick="switchTab('technical')" id="nav-btn-technical" class="nav-link">Technical</button>
+        <button onclick="switchTab('aptitude')" id="nav-btn-aptitude" class="nav-link">Aptitude</button>
+        <button onclick="switchTab('mock')" id="nav-btn-mock" class="nav-link">Mock AI</button>
+        <button onclick="switchTab('resume')" id="nav-btn-resume" class="nav-link">Resume</button>
+        <button onclick="switchTab('hr')" id="nav-btn-hr" class="nav-link">HR Guide</button>
+        <button onclick="switchTab('planner')" id="nav-btn-planner" class="nav-link">30-Day Plan</button>
+        <button onclick="switchTab('companies')" id="nav-btn-companies" class="nav-link">Company Prep</button>
+        <button onclick="switchTab('communication')" id="nav-btn-communication" class="nav-link">English</button>
+        <button onclick="switchTab('readiness')" id="nav-btn-readiness" class="nav-link">Guides</button>
+      </nav>
+
+      <!-- Zone 3: Profile & Navigation Actions -->
+      <div style="display: flex; align-items: center; gap: 0.5rem;">
+        <button onclick="openModal('profile-modal')" class="btn btn-secondary btn-sm" id="top-profile-badge">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 21v-2a4 4 0 0 0-4-4H9a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/></svg>
+          <span id="profile-summary-text">Profile</span>
+        </button>
+
+        <button onclick="toggleMobileMenu()" class="btn btn-secondary btn-sm" style="display: flex; padding: 0.4rem;" aria-label="Toggle Menu" id="mobile-menu-btn">
+          <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+        </button>
+      </div>
+
+    </div>
+
+    <!-- Mobile Dropdown Menu -->
+    <div id="mobile-dropdown-menu" style="display: none; background: #ffffff; border-top: 1px solid var(--slate-200); padding: 1rem;" class="no-print">
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+        <button onclick="switchTab('dashboard'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">Dashboard</button>
+        <button onclick="switchTab('technical'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">Technical Q&A</button>
+        <button onclick="switchTab('aptitude'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">Aptitude Tests</button>
+        <button onclick="switchTab('mock'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">Mock Interview</button>
+        <button onclick="switchTab('resume'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">Resume Builder</button>
+        <button onclick="switchTab('hr'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">HR Questions</button>
+        <button onclick="switchTab('planner'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">30-Day Plan</button>
+        <button onclick="switchTab('companies'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">Company Prep</button>
+        <button onclick="switchTab('communication'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">English Practice</button>
+        <button onclick="switchTab('readiness'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="justify-content: flex-start;">Placement Guides</button>
+      </div>
+      <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid var(--slate-100); display: flex; gap: 0.5rem;">
+        <button onclick="openModal('progress-modal'); toggleMobileMenu();" class="btn btn-secondary btn-sm" style="flex: 1;">Progress & Backup</button>
+        <button onclick="openModal('deploy-modal'); toggleMobileMenu();" class="btn btn-outline-primary btn-sm" style="flex: 1;">How to Host on Phone</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- MAIN VIEW CONTENT CONTAINER -->
+  <main class="container" style="flex: 1; padding-top: 1rem; padding-bottom: 2rem;">
+
+    <!-- 1. DASHBOARD VIEW -->
+    <div id="view-dashboard" class="app-view">
+      
+      <!-- Hero -->
+      <section class="hero-banner">
+        <div class="hero-badge">
+          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg>
+          <span id="hero-profile-tag">BCA / BE · Student Prep</span>
+        </div>
+        <h1 class="hero-title">Practise Smarter. Speak Confidently. <span style="color: #93c5fd;">Get Career Ready.</span></h1>
+        <p class="hero-desc">
+          Your personal interview coach tailored for college students, freshers, and job seekers. Master technical questions, timed aptitude quizzes, voice mock interviews, and ATS resumes—100% free and ready to deploy.
+        </p>
+        <div class="hero-actions">
+          <button onclick="switchTab('mock')" class="btn" style="background: #ffffff; color: #1e3a8a; font-weight: 700;">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/><line x1="8" y1="23" x2="16" y2="23"/></svg>
+            Start Mock Interview
+          </button>
+          <button onclick="switchTab('technical')" class="btn" style="background: rgba(255, 255, 255, 0.15); color: #ffffff; border-color: rgba(255, 255, 255, 0.3);">
+            Browse Technical Q&A
+          </button>
+          <button onclick="switchTab('resume')" class="btn" style="background: rgba(255, 255, 255, 0.15); color: #ffffff; border-color: rgba(255, 255, 255, 0.3);">
+            Fresher Resume Builder
+          </button>
+        </div>
+      </section>
+
+      <!-- Readiness Status Strip -->
+      <section class="readiness-strip">
+        <div class="readiness-grid">
+          <div class="dial-card">
+            <div class="dial-circle" id="dash-overall-dial">0%</div>
+            <div>
+              <div style="font-size: 0.875rem; font-weight: 800; color: var(--slate-900);">Interview Readiness Score</div>
+              <div style="font-size: 0.75rem; color: var(--slate-500); margin-top: 2px;">
+                Weighted indicator across tech, aptitude, mock, and study plan tasks.
+              </div>
+            </div>
+          </div>
+
+          <div class="progress-bars-grid">
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem;">
+                <span style="font-weight: 600; color: var(--slate-700);">Technical</span>
+                <span id="score-tech-text" class="font-mono font-bold">0/30</span>
+              </div>
+              <div class="p-bar-wrap">
+                <div id="bar-tech-fill" class="p-bar-fill" style="width: 0%; background-color: var(--primary);"></div>
+              </div>
+              <span id="stat-tech-count" style="font-size: 0.6875rem; color: var(--slate-400); margin-top: 2px; display: block;">0 completed</span>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem;">
+                <span style="font-weight: 600; color: var(--slate-700);">Aptitude</span>
+                <span id="score-apt-text" class="font-mono font-bold">0/30</span>
+              </div>
+              <div class="p-bar-wrap">
+                <div id="bar-apt-fill" class="p-bar-fill" style="width: 0%; background-color: #6366f1;"></div>
+              </div>
+              <span id="stat-apt-count" style="font-size: 0.6875rem; color: var(--slate-400); margin-top: 2px; display: block;">0 quizzes</span>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem;">
+                <span style="font-weight: 600; color: var(--slate-700);">Mock AI</span>
+                <span id="score-mock-text" class="font-mono font-bold">0/25</span>
+              </div>
+              <div class="p-bar-wrap">
+                <div id="bar-mock-fill" class="p-bar-fill" style="width: 0%; background-color: #0284c7;"></div>
+              </div>
+              <span id="stat-mock-count" style="font-size: 0.6875rem; color: var(--slate-400); margin-top: 2px; display: block;">0 sessions</span>
+            </div>
+
+            <div>
+              <div style="display: flex; justify-content: space-between; font-size: 0.75rem;">
+                <span style="font-weight: 600; color: var(--slate-700);">Study Plan</span>
+                <span id="score-task-text" class="font-mono font-bold">0/15</span>
+              </div>
+              <div class="p-bar-wrap">
+                <div id="bar-task-fill" class="p-bar-fill" style="width: 0%; background-color: var(--emerald-600);"></div>
+              </div>
+              <span id="stat-task-count" style="font-size: 0.6875rem; color: var(--slate-400); margin-top: 2px; display: block;">0 tasks</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Main Feature Cards Grid -->
+      <section style="margin-bottom: 2rem;">
+        <h2 style="font-size: 1.25rem; font-weight: 800; margin-bottom: 1rem;">Core Interview Preparation Modules</h2>
+        <div class="grid-1-3">
+          
+          <div class="card card-hover" onclick="switchTab('technical')" style="cursor: pointer;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">💻</div>
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem;">Technical Question Bank</h3>
+            <p style="font-size: 0.8125rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 1rem;">
+              15+ topics: HTML, CSS, JavaScript, PHP, Java, Python, C/C++, SQL, DBMS, DSA, OS, and Networks with beginner-friendly explanations.
+            </p>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary);">Explore Questions →</span>
+          </div>
+
+          <div class="card card-hover" onclick="switchTab('aptitude')" style="cursor: pointer;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">⏱️</div>
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem;">Aptitude Practice Tests</h3>
+            <p style="font-size: 0.8125rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 1rem;">
+              Timed 4-option MCQs covering Numerical Ability, Logical Reasoning, Percentages, Profit & Loss, Time & Work with full step-by-step solutions.
+            </p>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary);">Start Aptitude Quiz →</span>
+          </div>
+
+          <div class="card card-hover" onclick="switchTab('mock')" style="cursor: pointer;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🎙️</div>
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem;">Voice & Text Mock AI</h3>
+            <p style="font-size: 0.8125rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 1rem;">
+              Speak into your phone mic or type your answers. Get transparent objective feedback on structure, relevance, and improved model answers.
+            </p>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary);">Start Mock Session →</span>
+          </div>
+
+          <div class="card card-hover" onclick="switchTab('resume')" style="cursor: pointer;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📄</div>
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem;">Fresher Resume Builder</h3>
+            <p style="font-size: 0.8125rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 1rem;">
+              No experience necessary. Format student projects, skills, and coursework into an ATS-friendly single-page A4 PDF ready to print.
+            </p>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary);">Build My Resume →</span>
+          </div>
+
+          <div class="card card-hover" onclick="switchTab('hr')" style="cursor: pointer;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">🤝</div>
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem;">HR Interview Mastery</h3>
+            <p style="font-size: 0.8125rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 1rem;">
+              Sample answers, pitfalls, and honesty tips for "Tell me about yourself", weaknesses, why hire as a fresher, and STAR challenge stories.
+            </p>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary);">Review HR Answers →</span>
+          </div>
+
+          <div class="card card-hover" onclick="switchTab('planner')" style="cursor: pointer;">
+            <div style="font-size: 1.5rem; margin-bottom: 0.5rem;">📅</div>
+            <h3 style="font-size: 1rem; font-weight: 700; margin-bottom: 0.25rem;">30-Day Placement Plan</h3>
+            <p style="font-size: 0.8125rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 1rem;">
+              Structured day-by-day curriculum from profile audit to final mock interviews. Add your own custom study tasks and track completion.
+            </p>
+            <span style="font-size: 0.75rem; font-weight: 700; color: var(--primary);">View Daily Tasks →</span>
+          </div>
+
+        </div>
+      </section>
+
+      <!-- Target Role Guidance Box -->
+      <section class="card" style="background: #f8fafc; border-color: var(--slate-200); margin-bottom: 2rem;">
+        <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+          <div style="font-size: 0.75rem; font-weight: 800; color: var(--primary); text-transform: uppercase;">
+            Personalized Recommendation
+          </div>
+          <h3 style="font-size: 1.05rem;" id="dash-recom-title">Focus for Software Developer</h3>
+          <p style="font-size: 0.8125rem; color: var(--slate-600); line-height: 1.6;" id="dash-recom-desc">
+            Prioritize SQL joins, data structure basics, and practice your 90-second project walkthrough.
+          </p>
+          <div style="display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem;">
+            <button onclick="switchTab('companies')" class="btn btn-secondary btn-sm">Company Guides (Infosys, TCS...)</button>
+            <button onclick="switchTab('communication')" class="btn btn-secondary btn-sm">Self-Intro Builder</button>
+            <button onclick="openModal('deploy-modal')" class="btn btn-outline-primary btn-sm">How to Publish Online (Free)</button>
+          </div>
+        </div>
+      </section>
+
+    </div>
+
+    <!-- 2. TECHNICAL QUESTIONS VIEW -->
+    <div id="view-technical" class="app-view" style="display: none;">
+      <div style="display: flex; flex-direction: column; gap: 1rem; margin-bottom: 1.5rem;">
+        <div>
+          <h1 style="font-size: 1.5rem; font-weight: 800;">Technical Question Bank</h1>
+          <p class="text-muted" style="font-size: 0.8125rem;">Beginner-friendly explanations with code snippets across 15 core computer science topics.</p>
+        </div>
+
+        <!-- Topic Buttons Scroller -->
+        <div class="horizontal-scroll" id="tech-topics-container">
+          <!-- Filled dynamically by JS -->
+        </div>
+
+        <!-- Filter bar -->
+        <div class="card" style="padding: 0.75rem; display: flex; gap: 0.75rem; flex-wrap: wrap; align-items: center;">
+          <input type="text" id="tech-search-input" placeholder="Search questions, concepts, keywords..." style="flex: 1; min-width: 200px;" oninput="renderTechnicalQuestions()" />
+          
+          <select id="tech-diff-filter" style="width: auto; min-width: 140px;" onchange="renderTechnicalQuestions()">
+            <option value="All">All Difficulties</option>
+            <option value="Beginner">Beginner</option>
+            <option value="Intermediate">Intermediate</option>
+            <option value="Advanced">Advanced</option>
+          </select>
+
+          <button onclick="toggleShowOnlySaved()" id="tech-saved-toggle-btn" class="btn btn-secondary btn-sm">
+            Saved (<span id="saved-count-num">0</span>)
+          </button>
+
+          <button onclick="startFlashcardQuiz()" class="btn btn-primary btn-sm">
+            Self-Test Mode
+          </button>
+        </div>
+      </div>
+
+      <!-- Question List Container -->
+      <div id="technical-questions-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <!-- Filled dynamically by JS -->
+      </div>
+    </div>
+
+    <!-- 3. APTITUDE TESTS VIEW -->
+    <div id="view-aptitude" class="app-view" style="display: none;">
+      <div style="margin-bottom: 1.5rem;">
+        <h1 style="font-size: 1.5rem; font-weight: 800;">Interactive Aptitude Practice</h1>
+        <p class="text-muted" style="font-size: 0.8125rem;">Timed 4-option MCQs with instant scoring, formula breakdowns, and step-by-step solutions.</p>
+      </div>
+
+      <!-- Setup State -->
+      <div id="aptitude-setup-panel" class="card" style="padding: 1.5rem;">
+        <h2 style="font-size: 1rem; margin-bottom: 1rem;">Select Aptitude Category</h2>
+        <div class="horizontal-scroll" id="aptitude-category-buttons" style="margin-bottom: 1.5rem;">
+          <!-- Filled dynamically by JS -->
+        </div>
+
+        <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.5rem;">
+          <div style="display: flex; align-items: center; gap: 0.5rem; font-size: 0.8125rem; font-weight: 700; color: var(--slate-800);">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+            Timed Test Rules:
+          </div>
+          <p style="font-size: 0.75rem; color: var(--slate-600); margin-top: 0.25rem;">
+            75 seconds per question. Pause and resume anytime. Full step-by-step solutions and scoring displayed after test submission.
+          </p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end;">
+          <button onclick="startAptitudeTest()" class="btn btn-primary">
+            Start Timed Test Now
+          </button>
+        </div>
+      </div>
+
+      <!-- Test in Progress Panel -->
+      <div id="aptitude-active-panel" style="display: none;" class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--slate-100); padding-bottom: 1rem; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+          <div>
+            <span id="apt-q-tracker" style="font-size: 0.75rem; font-weight: 800; color: var(--primary);">Question 1 of 10</span>
+            <span class="text-muted" style="font-size: 0.75rem; margin-left: 0.5rem;" id="apt-topic-label">Percentages</span>
+          </div>
+
+          <div style="display: flex; align-items: center; gap: 0.75rem;">
+            <div id="apt-timer-badge" class="font-mono" style="padding: 0.35rem 0.75rem; border-radius: 0.5rem; background: var(--primary-light); color: var(--primary); font-weight: 700; font-size: 0.875rem;">
+              12:00
+            </div>
+            <button onclick="toggleAptitudeTimer()" class="btn btn-secondary btn-sm" id="apt-pause-btn">Pause</button>
+            <button onclick="submitAptitudeTest()" class="btn btn-primary btn-sm">Submit Test</button>
+          </div>
+        </div>
+
+        <!-- Question Body -->
+        <div style="margin-bottom: 1.5rem;">
+          <h2 id="apt-question-text" style="font-size: 1.1rem; line-height: 1.5; margin-bottom: 1.25rem;">
+            Question text goes here
+          </h2>
+
+          <div id="apt-options-container" style="display: grid; grid-template-columns: 1fr; gap: 0.75rem;">
+            <!-- 4 Options populated here -->
+          </div>
+        </div>
+
+        <!-- Navigation Controls -->
+        <div style="display: flex; justify-content: space-between; align-items: center; border-top: 1px solid var(--slate-100); padding-top: 1rem; flex-wrap: wrap; gap: 0.75rem;">
+          <div style="display: flex; gap: 0.5rem;">
+            <button onclick="prevAptitudeQuestion()" id="apt-prev-btn" class="btn btn-secondary btn-sm">Previous</button>
+            <button onclick="nextAptitudeQuestion()" id="apt-next-btn" class="btn btn-primary btn-sm">Next</button>
+          </div>
+
+          <!-- Question jump palette -->
+          <div id="apt-palette-container" style="display: flex; gap: 0.25rem; flex-wrap: wrap;">
+            <!-- Buttons 1, 2, 3... -->
+          </div>
+        </div>
+      </div>
+
+      <!-- Test Results Panel -->
+      <div id="aptitude-results-panel" style="display: none;">
+        <div class="card" style="text-align: center; padding: 2rem; margin-bottom: 1.5rem;">
+          <div style="font-size: 2.5rem; margin-bottom: 0.5rem;">🏆</div>
+          <h2 style="font-size: 1.5rem; font-weight: 800; margin-bottom: 0.25rem;">Test Complete!</h2>
+          <p class="text-muted" style="font-size: 0.8125rem; margin-bottom: 1.5rem;">Here is your performance breakdown</p>
+
+          <div style="display: inline-flex; align-items: center; gap: 2rem; background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 1rem; padding: 1rem 2rem; margin-bottom: 1.5rem;">
+            <div>
+              <div id="apt-result-score" class="font-mono font-bold" style="font-size: 1.75rem; color: var(--slate-900);">0 / 10</div>
+              <div style="font-size: 0.6875rem; font-weight: 700; color: var(--slate-500); text-transform: uppercase;">Correct Score</div>
+            </div>
+            <div style="width: 1px; height: 40px; background: var(--slate-200);"></div>
+            <div>
+              <div id="apt-result-percent" class="font-mono font-bold" style="font-size: 1.75rem; color: var(--primary);">0%</div>
+              <div style="font-size: 0.6875rem; font-weight: 700; color: var(--slate-500); text-transform: uppercase;">Accuracy</div>
+            </div>
+          </div>
+
+          <div style="display: flex; justify-content: center; gap: 0.5rem;">
+            <button onclick="startAptitudeTest()" class="btn btn-primary btn-sm">Retry Test</button>
+            <button onclick="closeAptitudeResults()" class="btn btn-secondary btn-sm">Choose Another Topic</button>
+          </div>
+        </div>
+
+        <h3 style="font-size: 1rem; font-weight: 800; margin-bottom: 1rem;">Step-by-Step Question Review & Solutions</h3>
+        <div id="aptitude-solutions-list" style="display: flex; flex-direction: column; gap: 1rem;">
+          <!-- Solution breakdown rows -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 4. MOCK INTERVIEW VIEW (Voice & Text with Offline Rule Evaluator) -->
+    <div id="view-mock" class="app-view" style="display: none;">
+      <div style="margin-bottom: 1.5rem;">
+        <h1 style="font-size: 1.5rem; font-weight: 800;">Mock Interview Simulation</h1>
+        <p class="text-muted" style="font-size: 0.8125rem;">Practice answering role-specific questions via microphone or text with transparent feedback.</p>
+      </div>
+
+      <!-- Mock Setup Box -->
+      <div id="mock-setup-panel" class="card" style="padding: 1.5rem;">
+        <div class="grid-1-2" style="margin-bottom: 1.5rem;">
+          <div>
+            <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.35rem;">Target Job Role</label>
+            <select id="mock-role-select">
+              <option value="Software Developer">Software Developer</option>
+              <option value="Web Developer">Web Developer</option>
+              <option value="Data Analyst">Data Analyst</option>
+              <option value="Software Tester">Software Tester</option>
+              <option value="IT Support">IT Support Specialist</option>
+              <option value="Cybersecurity Beginner">Cybersecurity Beginner</option>
+              <option value="Business Analyst">Business Analyst</option>
+              <option value="Customer Support">Customer Support</option>
+            </select>
+          </div>
+
+          <div>
+            <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.35rem;">Difficulty</label>
+            <select id="mock-diff-select">
+              <option value="Beginner">Beginner (Fresher level)</option>
+              <option value="Intermediate">Intermediate</option>
+              <option value="Advanced">Advanced</option>
+            </select>
+          </div>
+        </div>
+
+        <div style="background: var(--primary-light); border: 1px solid var(--primary-border); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.5rem;">
+          <div style="font-size: 0.8125rem; font-weight: 700; color: #1e3a8a; display: flex; align-items: center; gap: 0.5rem;">
+            🎙️ Speech Recognition & Evaluation Guarantee:
+          </div>
+          <p style="font-size: 0.75rem; color: #1e40af; margin-top: 0.25rem; line-height: 1.5;">
+            Dictate via your browser's Web Speech API or type your response. You can edit any transcription mistakes before submitting. Answers are evaluated using a transparent rubric (relevance, length, STAR structure, and domain keywords) without exposing any API keys.
+          </p>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end;">
+          <button onclick="startMockInterview()" class="btn btn-primary">
+            Begin 3-Question Mock Session
+          </button>
+        </div>
+      </div>
+
+      <!-- Mock In-Session Box -->
+      <div id="mock-active-panel" style="display: none;" class="card">
+        <div style="display: flex; justify-content: space-between; align-items: center; border-bottom: 1px solid var(--slate-100); padding-bottom: 0.75rem; margin-bottom: 1rem;">
+          <span id="mock-q-counter" style="font-size: 0.75rem; font-weight: 800; color: var(--primary);">Question 1 of 3</span>
+          <button onclick="exitMockInterview()" class="btn btn-secondary btn-sm">Exit Session</button>
+        </div>
+
+        <div style="background: #0f172a; color: #ffffff; border-radius: 1rem; padding: 1.5rem; margin-bottom: 1.25rem;">
+          <span style="font-size: 0.6875rem; font-weight: 700; color: #93c5fd; text-transform: uppercase;">Interviewer Asks:</span>
+          <h2 id="mock-question-display" style="font-size: 1.15rem; color: #ffffff; line-height: 1.5; margin-top: 0.25rem;">
+            Question appears here
+          </h2>
+          <p id="mock-hint-display" style="font-size: 0.75rem; color: #cbd5e1; margin-top: 0.5rem; border-top: 1px solid rgba(255, 255, 255, 0.1); padding-top: 0.5rem;">
+            Tip: Frame with context and examples.
+          </p>
+        </div>
+
+        <!-- Answer area -->
+        <div style="margin-bottom: 1.25rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.5rem;">
+            <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700);">Your Response (Editable):</label>
+            
+            <button onclick="toggleSpeechRecording()" id="mock-mic-btn" class="btn btn-outline-primary btn-sm">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+              <span id="mock-mic-label">Dictate with Mic</span>
+            </button>
+          </div>
+
+          <div id="mock-speech-notice" style="display: none; background: var(--amber-50); border: 1px solid #fde68a; border-radius: 0.5rem; padding: 0.5rem 0.75rem; font-size: 0.75rem; color: var(--amber-700); margin-bottom: 0.5rem;">
+            Microphone notice
+          </div>
+
+          <textarea id="mock-answer-input" rows="6" placeholder="Type your answer here or click 'Dictate with Mic' to speak. Feel free to edit words before submitting..." oninput="updateMockWordCount()"></textarea>
+
+          <div style="display: flex; justify-content: space-between; font-size: 0.6875rem; color: var(--slate-400); margin-top: 0.25rem;">
+            <span id="mock-word-count">0 words</span>
+            <span>Optimal: 70 - 160 words</span>
+          </div>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end;" id="mock-submit-btn-wrap">
+          <button onclick="submitMockAnswer()" class="btn btn-primary" id="mock-submit-btn">
+            Submit Answer for Evaluation
+          </button>
+        </div>
+
+        <!-- Turn Evaluation Report Box -->
+        <div id="mock-eval-report" style="display: none; margin-top: 1.5rem; border-top: 1px solid var(--slate-200); padding-top: 1.5rem;">
+          <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem; flex-wrap: wrap; gap: 0.5rem;">
+            <div>
+              <span style="font-size: 0.6875rem; font-weight: 700; color: var(--slate-400); text-transform: uppercase;">Evaluation Report</span>
+              <div style="font-size: 1.1rem; font-weight: 800; color: var(--slate-900);">
+                Practice Score: <span id="eval-score-num" style="color: var(--primary);">80</span>/100
+                <span class="tag tag-slate" style="margin-left: 0.5rem;">Rule-Based Practice Feedback</span>
+              </div>
+            </div>
+            <div id="eval-score-exp" style="font-size: 0.75rem; color: var(--slate-500); max-width: 320px;">
+              Score based on length, structure, and domain keywords.
+            </div>
+          </div>
+
+          <div class="grid-1-2" style="margin-bottom: 1rem;">
+            <div style="background: var(--emerald-50); border: 1px solid #a7f3d0; border-radius: 0.75rem; padding: 1rem;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: var(--emerald-700); display: block; margin-bottom: 0.5rem;">
+                ✓ Key Strengths Observed
+              </span>
+              <ul id="eval-strengths-list" style="font-size: 0.75rem; color: var(--slate-700); padding-left: 1.25rem; line-height: 1.6;"></ul>
+            </div>
+
+            <div style="background: var(--amber-50); border: 1px solid #fde68a; border-radius: 0.75rem; padding: 1rem;">
+              <span style="font-size: 0.75rem; font-weight: 800; color: var(--amber-700); display: block; margin-bottom: 0.5rem;">
+                ▲ Areas to Elevate
+              </span>
+              <ul id="eval-improvements-list" style="font-size: 0.75rem; color: var(--slate-700); padding-left: 1.25rem; line-height: 1.6;"></ul>
+            </div>
+          </div>
+
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.25rem;">
+            <span style="font-size: 0.75rem; font-weight: 800; color: var(--slate-800); display: block; margin-bottom: 0.25rem;">Sample Improved Response:</span>
+            <p id="eval-sample-answer" style="font-size: 0.8125rem; color: var(--slate-600); font-style: italic; line-height: 1.5;"></p>
+          </div>
+
+          <div style="display: flex; justify-content: flex-end;">
+            <button onclick="nextMockQuestion()" class="btn btn-primary" id="mock-continue-btn">
+              Continue to Next Question →
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 5. RESUME BUILDER VIEW -->
+    <div id="view-resume" class="app-view" style="display: none;">
+      <div class="no-print" style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <h1 style="font-size: 1.5rem; font-weight: 800;">Fresher Resume Builder</h1>
+          <p class="text-muted" style="font-size: 0.8125rem;">ATS-friendly format tailored for students and freshers. No prior experience required.</p>
+        </div>
+
+        <div style="display: flex; gap: 0.5rem;">
+          <button onclick="loadSampleResumeData()" class="btn btn-secondary btn-sm">Load Sample Fresher Data</button>
+          <button onclick="window.print()" class="btn btn-primary btn-sm">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="6 9 6 2 18 2 18 9"/><path d="M6 18H4a2 2 0 0 1-2-2v-5a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v5a2 2 0 0 1-2 2h-2"/><rect x="6" y="14" width="12" height="8"/></svg>
+            Print / Save as PDF
+          </button>
+        </div>
+      </div>
+
+      <!-- Resume Split Layout -->
+      <div class="grid-1-2" style="align-items: flex-start; gap: 1.5rem;">
+        
+        <!-- Editor Controls (no-print) -->
+        <div class="no-print" style="display: flex; flex-direction: column; gap: 1rem;">
+          
+          <div class="card">
+            <h3 style="font-size: 0.875rem; font-weight: 800; margin-bottom: 0.75rem;">Personal Details</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <input type="text" id="res-input-name" placeholder="Full Name" oninput="syncResumeLive()" />
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                <input type="text" id="res-input-email" placeholder="Email" oninput="syncResumeLive()" />
+                <input type="text" id="res-input-phone" placeholder="Phone" oninput="syncResumeLive()" />
+              </div>
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                <input type="text" id="res-input-location" placeholder="City, State" oninput="syncResumeLive()" />
+                <input type="text" id="res-input-linkedin" placeholder="LinkedIn Profile" oninput="syncResumeLive()" />
+              </div>
+              <input type="text" id="res-input-github" placeholder="GitHub / Portfolio Link" oninput="syncResumeLive()" />
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 0.875rem; font-weight: 800; margin-bottom: 0.75rem;">Career Objective</h3>
+            <textarea id="res-input-summary" rows="3" placeholder="2-3 sentences on your degree and goals..." oninput="syncResumeLive()"></textarea>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 0.875rem; font-weight: 800; margin-bottom: 0.75rem;">Technical Skills</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <input type="text" id="res-input-skills-tech" placeholder="Languages & Frameworks (e.g. Python, SQL, React)" oninput="syncResumeLive()" />
+              <input type="text" id="res-input-skills-tools" placeholder="Developer Tools (e.g. Git, VS Code, Linux)" oninput="syncResumeLive()" />
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 0.875rem; font-weight: 800; margin-bottom: 0.75rem;">Education (College & School)</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <input type="text" id="res-input-edu-degree" placeholder="Degree (e.g. BCA / B.Tech Computer Science)" oninput="syncResumeLive()" />
+              <input type="text" id="res-input-edu-college" placeholder="College / University Name" oninput="syncResumeLive()" />
+              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+                <input type="text" id="res-input-edu-year" placeholder="Graduation Year (e.g. 2022 - 2026)" oninput="syncResumeLive()" />
+                <input type="text" id="res-input-edu-score" placeholder="CGPA or Percentage" oninput="syncResumeLive()" />
+              </div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3 style="font-size: 0.875rem; font-weight: 800; margin-bottom: 0.75rem;">Key Academic Projects</h3>
+            <div style="display: flex; flex-direction: column; gap: 0.5rem;">
+              <input type="text" id="res-input-proj1-title" placeholder="Project 1 Title" oninput="syncResumeLive()" />
+              <input type="text" id="res-input-proj1-tech" placeholder="Project 1 Tech Stack" oninput="syncResumeLive()" />
+              <textarea id="res-input-proj1-desc" rows="2" placeholder="What did you build and what problem did it solve?" oninput="syncResumeLive()"></textarea>
+
+              <hr style="border: none; border-top: 1px dashed var(--slate-200); margin: 0.5rem 0;" />
+
+              <input type="text" id="res-input-proj2-title" placeholder="Project 2 Title" oninput="syncResumeLive()" />
+              <input type="text" id="res-input-proj2-tech" placeholder="Project 2 Tech Stack" oninput="syncResumeLive()" />
+              <textarea id="res-input-proj2-desc" rows="2" placeholder="Features implemented and outcomes..." oninput="syncResumeLive()"></textarea>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Live Printable Resume Preview (A4 Page) -->
+        <div>
+          <div class="resume-a4-preview" id="printable-resume-box">
+            
+            <div class="resume-header">
+              <div>
+                <h2 id="res-preview-name" style="font-size: 1.5rem; font-weight: 800; color: #1e3a8a; text-transform: uppercase;">YOUR NAME</h2>
+                <div style="font-size: 0.75rem; font-weight: 700; color: var(--primary);">ENTRY-LEVEL CANDIDATE</div>
+              </div>
+              <div style="font-size: 0.6875rem; color: var(--slate-600); text-align: right;">
+                <div id="res-preview-contact">email@example.com · +91 98765 43210</div>
+                <div id="res-preview-location">Bengaluru, India</div>
+                <div id="res-preview-links" style="color: #1e3a8a; font-weight: 600;">linkedin.com/in/username</div>
+              </div>
+            </div>
+
+            <!-- Summary -->
+            <div class="resume-section-title">Professional Summary</div>
+            <p id="res-preview-summary" style="color: var(--slate-700); text-align: justify;">
+              Dedicated student with strong foundations in software fundamentals, algorithms, and practical web project experience. Eager to contribute clean code and learn from experienced mentors.
+            </p>
+
+            <!-- Skills -->
+            <div class="resume-section-title">Technical Competencies</div>
+            <div style="color: var(--slate-700);">
+              <div><strong style="color: var(--slate-900);">Languages & Web: </strong><span id="res-preview-skills-tech">C++, Python, JavaScript, HTML, CSS, SQL</span></div>
+              <div><strong style="color: var(--slate-900);">Tools & Platforms: </strong><span id="res-preview-skills-tools">Git, VS Code, MySQL, Linux</span></div>
+            </div>
+
+            <!-- Projects -->
+            <div class="resume-section-title">Academic & Personal Projects</div>
+            <div style="display: flex; flex-direction: column; gap: 0.75rem;">
+              <div>
+                <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--slate-900);">
+                  <span id="res-preview-proj1-title">Smart Campus Attendance System</span>
+                  <span id="res-preview-proj1-tech" style="color: #1e3a8a; font-weight: 600;">Python, SQLite, Tkinter</span>
+                </div>
+                <p id="res-preview-proj1-desc" style="color: var(--slate-700); margin-top: 2px;">
+                  Developed a desktop application to record student attendance with barcode scanning and export monthly percentage reports.
+                </p>
+              </div>
+
+              <div>
+                <div style="display: flex; justify-content: space-between; font-weight: 700; color: var(--slate-900);">
+                  <span id="res-preview-proj2-title">E-Commerce Product Catalog</span>
+                  <span id="res-preview-proj2-tech" style="color: #1e3a8a; font-weight: 600;">JavaScript, HTML5, CSS3</span>
+                </div>
+                <p id="res-preview-proj2-desc" style="color: var(--slate-700); margin-top: 2px;">
+                  Engineered a responsive single-page store with live search filtering, local storage cart persistence, and checkout validation.
+                </p>
+              </div>
+            </div>
+
+            <!-- Education -->
+            <div class="resume-section-title">Education</div>
+            <div style="display: flex; justify-content: space-between;">
+              <div>
+                <div id="res-preview-edu-degree" style="font-weight: 700; color: var(--slate-900);">Bachelor of Computer Applications (BCA)</div>
+                <div id="res-preview-edu-college" style="color: var(--slate-600);">University College of Science</div>
+              </div>
+              <div style="text-align: right;">
+                <div id="res-preview-edu-year" style="font-weight: 600; color: var(--slate-800);">2022 - 2026</div>
+                <div id="res-preview-edu-score" style="color: #1e3a8a; font-weight: 700;">8.4 CGPA</div>
+              </div>
+            </div>
+
+            <!-- Achievements -->
+            <div class="resume-section-title">Certifications & Achievements</div>
+            <ul style="color: var(--slate-700); padding-left: 1.25rem;">
+              <li>Solved 150+ coding challenges on HackerRank / LeetCode.</li>
+              <li>Completed Certification in Database Design & SQL Fundamentals.</li>
+              <li>Active member of College Technical & Coding Club.</li>
+            </ul>
+
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- 6. HR INTERVIEW PREPARATION VIEW -->
+    <div id="view-hr" class="app-view" style="display: none;">
+      <div style="margin-bottom: 1.5rem;">
+        <h1 style="font-size: 1.5rem; font-weight: 800;">HR Interview Preparation</h1>
+        <p class="text-muted" style="font-size: 0.8125rem;">Learn how to answer standard behavioral questions honestly without memorizing scripted lines.</p>
+      </div>
+
+      <div style="background: var(--amber-50); border: 1px solid #fde68a; border-radius: 0.75rem; padding: 1rem; margin-bottom: 1.5rem; font-size: 0.8125rem; color: var(--amber-700);">
+        <strong>Honesty & Personalization Rule:</strong> Never invent false experiences. Adapt each answer honestly to your genuine college projects, coursework, and personal growth.
+      </div>
+
+      <div id="hr-questions-accordion" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <!-- Filled dynamically by JS -->
+      </div>
+    </div>
+
+    <!-- 7. 30-DAY STUDY PLANNER VIEW -->
+    <div id="view-planner" class="app-view" style="display: none;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1.5rem; flex-wrap: wrap; gap: 0.75rem;">
+        <div>
+          <h1 style="font-size: 1.5rem; font-weight: 800;">30-Day Placement Study Plan</h1>
+          <p class="text-muted" style="font-size: 0.8125rem;">Daily placement preparation roadmap. Check off milestones as you progress.</p>
+        </div>
+        <div style="display: flex; gap: 0.5rem;">
+          <button onclick="openModal('add-task-modal')" class="btn btn-primary btn-sm">+ Add Custom Task</button>
+          <button onclick="resetDefaultPlan()" class="btn btn-secondary btn-sm">Reset 30-Day Plan</button>
+        </div>
+      </div>
+
+      <!-- Plan Filter Buttons -->
+      <div style="display: flex; gap: 0.5rem; margin-bottom: 1rem;">
+        <button onclick="filterPlanner('all')" id="plan-btn-all" class="btn btn-primary btn-sm">All Tasks</button>
+        <button onclick="filterPlanner('pending')" id="plan-btn-pending" class="btn btn-secondary btn-sm">Pending</button>
+        <button onclick="filterPlanner('completed')" id="plan-btn-completed" class="btn btn-secondary btn-sm">Completed</button>
+      </div>
+
+      <div id="study-tasks-list" style="display: flex; flex-direction: column; gap: 0.75rem;">
+        <!-- Populated dynamically -->
+      </div>
+    </div>
+
+    <!-- 8. COMPANY PREP VIEW -->
+    <div id="view-companies" class="app-view" style="display: none;">
+      <div style="margin-bottom: 1.5rem;">
+        <h1 style="font-size: 1.5rem; font-weight: 800;">Company-Specific Preparation</h1>
+        <p class="text-muted" style="font-size: 0.8125rem;">Recruitment patterns, selection stages, and technical expectations for top recruiters.</p>
+      </div>
+
+      <div class="horizontal-scroll" id="company-tabs-container" style="margin-bottom: 1.5rem;">
+        <!-- Filled dynamically -->
+      </div>
+
+      <div id="company-detail-card" class="card">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+
+    <!-- 9. ENGLISH COMMUNICATION VIEW -->
+    <div id="view-communication" class="app-view" style="display: none;">
+      <div style="margin-bottom: 1.5rem;">
+        <h1 style="font-size: 1.5rem; font-weight: 800;">Professional English & Communication</h1>
+        <p class="text-muted" style="font-size: 0.8125rem;">Master the 90-second self-introduction, workplace vocabulary, and recruiter emails.</p>
+      </div>
+
+      <div class="card" style="margin-bottom: 1.5rem;">
+        <h2 style="font-size: 1.1rem; margin-bottom: 0.5rem;">90-Second Self-Introduction Architect</h2>
+        <p class="text-muted" style="font-size: 0.75rem; margin-bottom: 1rem;">The Present-Past-Future formula for introducing yourself with clarity.</p>
+
+        <div style="display: flex; flex-direction: column; gap: 0.75rem; margin-bottom: 1rem;">
+          <div>
+            <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700);">1. The Present (Your degree & current focus):</label>
+            <input type="text" id="intro-present-input" value="I am a final-year Computer Applications student focusing on software development and relational databases." oninput="updateIntroPreview()" />
+          </div>
+          <div>
+            <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700);">2. The Past (1-2 real academic projects or coursework highlights):</label>
+            <input type="text" id="intro-past-input" value="During college, I built a student attendance manager using Python and SQLite which helped automate class reporting." oninput="updateIntroPreview()" />
+          </div>
+          <div>
+            <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700);">3. The Future (Why this role and company excite you):</label>
+            <input type="text" id="intro-future-input" value="I am eager to begin my career as an entry-level software engineer, where I can contribute to production features and learn from seasoned mentors." oninput="updateIntroPreview()" />
+          </div>
+        </div>
+
+        <div style="background: var(--primary-light); border: 1px solid var(--primary-border); border-radius: 0.75rem; padding: 1rem;">
+          <div style="font-size: 0.75rem; font-weight: 700; color: #1e3a8a; margin-bottom: 0.25rem;">Your Compiled Introduction:</div>
+          <p id="intro-compiled-text" style="font-size: 0.8125rem; color: var(--slate-800); font-style: italic; line-height: 1.6;"></p>
+          <div style="display: flex; justify-content: flex-end; margin-top: 0.5rem;">
+            <button onclick="copyIntroText()" class="btn btn-outline-primary btn-sm" id="intro-copy-btn">Copy to Clipboard</button>
+          </div>
+        </div>
+      </div>
+
+      <div class="card">
+        <h2 style="font-size: 1.1rem; margin-bottom: 0.5rem;">Workplace Phrases (Casual vs. Professional)</h2>
+        <div id="workplace-phrases-list" style="display: flex; flex-direction: column; gap: 0.75rem; margin-top: 1rem;">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </div>
+
+    <!-- 10. JOB READINESS ARTICLES VIEW -->
+    <div id="view-readiness" class="app-view" style="display: none;">
+      <div style="margin-bottom: 1.5rem;">
+        <h1 style="font-size: 1.5rem; font-weight: 800;">Job Readiness & Placement Guides</h1>
+        <p class="text-muted" style="font-size: 0.8125rem;">Practical guidance on cold messaging recruiters, video interview setups, and resume pitfalls.</p>
+      </div>
+
+      <div id="readiness-articles-list" style="display: flex; flex-direction: column; gap: 1rem;">
+        <!-- Filled dynamically -->
+      </div>
+    </div>
+
+  </main>
+
+  <!-- MOBILE BOTTOM NAVIGATION (Ergonomic Thumb Zone) -->
+  <nav class="bottom-nav no-print" aria-label="Mobile Navigation">
+    <button onclick="switchTab('dashboard')" id="bottom-tab-dashboard" class="bottom-tab active">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m3 9 9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"/><polyline points="9 22 9 12 15 12 15 22"/></svg>
+      <span>Home</span>
+    </button>
+    <button onclick="switchTab('technical')" id="bottom-tab-technical" class="bottom-tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg>
+      <span>Tech Q&A</span>
+    </button>
+    <button onclick="switchTab('aptitude')" id="bottom-tab-aptitude" class="bottom-tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+      <span>Aptitude</span>
+    </button>
+    <button onclick="switchTab('mock')" id="bottom-tab-mock" class="bottom-tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 1a3 3 0 0 0-3 3v8a3 3 0 0 0 6 0V4a3 3 0 0 0-3-3z"/><path d="M19 10v2a7 7 0 0 1-14 0v-2"/><line x1="12" y1="19" x2="12" y2="23"/></svg>
+      <span>Mock AI</span>
+    </button>
+    <button onclick="switchTab('resume')" id="bottom-tab-resume" class="bottom-tab">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><polyline points="14 2 14 8 20 8"/><line x1="16" y1="13" x2="8" y2="13"/><line x1="16" y1="17" x2="8" y2="17"/></svg>
+      <span>Resume</span>
+    </button>
+  </nav>
+
+  <!-- MODAL 1: CAREER PROFILE -->
+  <div id="profile-modal" class="modal-overlay no-print" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="font-size: 1rem; font-weight: 800;">Career Preparation Profile</h3>
+        <button onclick="closeModal('profile-modal')" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.5rem;">✕</button>
+      </div>
+      <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem;">
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.25rem;">Candidate Name</label>
+          <input type="text" id="modal-profile-name" placeholder="Your Name" />
+        </div>
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.25rem;">Education / Degree</label>
+          <select id="modal-profile-edu">
+            <option value="BCA">BCA (Bachelor of Computer Applications)</option>
+            <option value="BE/BTech">BE / B.Tech (Engineering)</option>
+            <option value="BSc">B.Sc (Computer Science / IT / Science)</option>
+            <option value="BCom">B.Com</option>
+            <option value="BA">B.A</option>
+            <option value="MCA">MCA / M.Sc</option>
+            <option value="Diploma">Diploma in IT / CS</option>
+            <option value="Other">Other Degree</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.25rem;">Target Job Role</label>
+          <select id="modal-profile-role">
+            <option value="Software Developer">Software Developer</option>
+            <option value="Web Developer">Web Developer</option>
+            <option value="Data Analyst">Data Analyst</option>
+            <option value="Software Tester">Software Tester</option>
+            <option value="IT Support">IT Support Specialist</option>
+            <option value="Cybersecurity Beginner">Cybersecurity Beginner</option>
+            <option value="Business Analyst">Business Analyst</option>
+            <option value="Customer Support">Customer Support</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.25rem;">Experience Level</label>
+          <select id="modal-profile-exp">
+            <option value="College Student">College Student (Currently studying)</option>
+            <option value="Fresher">Fresher (Recent Graduate looking for 1st job)</option>
+            <option value="Experienced Professional">Experienced Professional</option>
+          </select>
+        </div>
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.25rem;">Target Company (Optional)</label>
+          <input type="text" id="modal-profile-company" placeholder="e.g. TCS, Infosys, Wipro, Startup" />
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.5rem;">
+          <button onclick="closeModal('profile-modal')" class="btn btn-secondary btn-sm">Cancel</button>
+          <button onclick="saveProfileFromModal()" class="btn btn-primary btn-sm">Save Profile</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 2: PROGRESS, DATA & PRIVACY -->
+  <div id="progress-modal" class="modal-overlay no-print" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="font-size: 1rem; font-weight: 800;">Readiness Score & Local Storage</h3>
+        <button onclick="closeModal('progress-modal')" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.5rem;">✕</button>
+      </div>
+      <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1.25rem;">
+        
+        <div style="background: var(--primary-light); border: 1px solid var(--primary-border); border-radius: 0.75rem; padding: 1rem;">
+          <div style="font-size: 0.75rem; font-weight: 800; color: #1e3a8a;">Transparent Score Calculation:</div>
+          <p style="font-size: 0.75rem; color: #1e40af; line-height: 1.5; margin-top: 0.25rem;">
+            Readiness Score = Technical Completed (30%) + Aptitude Accuracy (30%) + Mock Interview Score (25%) + Study Plan Progress (15%). This is an active learning indicator, not an employment guarantee.
+          </p>
+        </div>
+
+        <div>
+          <div style="font-size: 0.75rem; font-weight: 800; color: var(--slate-700); margin-bottom: 0.5rem;">Local Data Management:</div>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.5rem;">
+            <button onclick="exportDataJSON()" class="btn btn-secondary btn-sm">Export Data (JSON)</button>
+            <label class="btn btn-secondary btn-sm" style="cursor: pointer; text-align: center;">
+              Import Backup
+              <input type="file" accept=".json" onchange="importDataJSON(event)" style="display: none;" />
+            </label>
+          </div>
+        </div>
+
+        <div style="border-top: 1px solid var(--slate-100); padding-top: 1rem;">
+          <button onclick="clearAllDataConfirm()" class="btn btn-danger-light btn-sm" style="width: 100%;">
+            Erase All Locally Saved Progress
+          </button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 3: HOW TO PUBLISH FROM ANDROID PHONE (FREE) -->
+  <div id="deploy-modal" class="modal-overlay no-print" style="display: none;">
+    <div class="modal-box" style="max-width: 600px;">
+      <div class="modal-header">
+        <h3 style="font-size: 1rem; font-weight: 800;">How to Publish from an Android Phone (Free)</h3>
+        <button onclick="closeModal('deploy-modal')" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.5rem;">✕</button>
+      </div>
+      <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 1rem; font-size: 0.8125rem; line-height: 1.6; color: var(--slate-700);">
+        
+        <div style="background: var(--emerald-50); border: 1px solid #a7f3d0; border-radius: 0.75rem; padding: 1rem;">
+          <strong style="color: var(--emerald-700); display: block; margin-bottom: 0.25rem;">No Laptop or Terminal Required!</strong>
+          This file is 100% self-contained. It contains all HTML, CSS, JavaScript, questions, and features. Anyone with your public link can open it in any phone or computer browser without signing into Google AI Studio.
+        </div>
+
+        <div>
+          <strong style="color: var(--slate-900);">Method 1: Tiiny.host (Fastest — 1 Minute from Mobile)</strong>
+          <ol style="padding-left: 1.25rem; margin-top: 0.25rem;">
+            <li>Have your <code>index.html</code> file ready on your phone or computer.</li>
+            <li>Open Chrome on your phone and go to <a href="https://tiiny.host" target="_blank" style="color: var(--primary); font-weight: 700;">tiiny.host</a>.</li>
+            <li>Upload your <code>index.html</code> file.</li>
+            <li>Type any link name you like (e.g. <code>interviewready-yourname</code>) and tap Launch!</li>
+            <li>Share the instant public URL with your lecturer, classmates, and friends.</li>
+          </ol>
+        </div>
+
+        <div>
+          <strong style="color: var(--slate-900);">Method 2: GitHub Pages (Permanent & Professional)</strong>
+          <ol style="padding-left: 1.25rem; margin-top: 0.25rem;">
+            <li>Open <a href="https://github.com" target="_blank" style="color: var(--primary); font-weight: 700;">github.com</a> in your phone's browser.</li>
+            <li>Create a new repository called <code>interviewready</code> (set to Public).</li>
+            <li>Tap "Add file" → "Upload files" and select <code>index.html</code>.</li>
+            <li>Commit the file.</li>
+            <li>Go to <strong>Settings</strong> → <strong>Pages</strong>, choose the <code>main</code> branch, and tap Save.</li>
+            <li>In 60 seconds, GitHub gives you a permanent public URL: <code>https://yourusername.github.io/interviewready/</code>!</li>
+          </ol>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; margin-top: 0.5rem;">
+          <button onclick="closeModal('hosting-guide-modal')" class="btn btn-primary btn-sm">Close Guide</button>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <!-- MODAL 4: ADD CUSTOM TASK -->
+  <div id="add-task-modal" class="modal-overlay no-print" style="display: none;">
+    <div class="modal-box">
+      <div class="modal-header">
+        <h3 style="font-size: 1rem; font-weight: 800;">Add Custom Study Milestone</h3>
+        <button onclick="closeModal('add-task-modal')" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.5rem;">✕</button>
+      </div>
+      <div style="padding: 1.25rem; display: flex; flex-direction: column; gap: 0.75rem;">
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.25rem;">Task Title</label>
+          <input type="text" id="new-task-title" placeholder="e.g. Solve 5 Array questions on LeetCode" />
+        </div>
+        <div>
+          <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.25rem;">Description</label>
+          <textarea id="new-task-desc" rows="2" placeholder="Notes, focus concepts, or links..."></textarea>
+        </div>
+        <div style="display: flex; justify-content: flex-end; gap: 0.5rem; margin-top: 0.5rem;">
+          <button onclick="closeModal('add-task-modal')" class="btn btn-secondary btn-sm">Cancel</button>
+          <button onclick="submitNewCustomTask()" class="btn btn-primary btn-sm">Add Task</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- JAVASCRIPT APPLICATION LOGIC -->
+  <script>
+    /* =========================================================
+       DATA BANKS: TECHNICAL, APTITUDE, HR, COMPANIES, GUIDES
+       ========================================================= */
+
+    const TECHNICAL_QUESTIONS = [
+      // HTML & CSS
+      {
+        id: 't-html-1',
+        topic: 'HTML',
+        difficulty: 'Beginner',
+        q: 'What is semantic HTML and why is it important?',
+        ans: 'Semantic HTML uses tags that explain the meaning of the content (like <header>, <nav>, <article>, <footer>) rather than just formatting. It enhances accessibility for screen readers, improves SEO indexing, and makes code maintainable.',
+        code: '<header>\n  <nav>\n    <a href="/">Home</a>\n  </nav>\n</header>'
+      },
+      {
+        id: 't-html-2',
+        topic: 'HTML',
+        difficulty: 'Beginner',
+        q: 'What is the difference between LocalStorage, SessionStorage, and Cookies?',
+        ans: 'Cookies have a 4KB limit and travel to the server with every HTTP request. LocalStorage stores up to 5-10MB locally and persists indefinitely until cleared. SessionStorage stores up to 5MB but expires automatically when the browser tab is closed.'
+      },
+      {
+        id: 't-css-1',
+        topic: 'CSS',
+        difficulty: 'Beginner',
+        q: 'Explain the CSS Box Model with its layers.',
+        ans: 'Every element in CSS is rendered as a box with four layers from inside out: 1. Content (text/media), 2. Padding (space around content), 3. Border (frame around padding), and 4. Margin (empty space outside border separating adjacent elements).',
+        code: '* {\n  box-sizing: border-box;\n  margin: 0;\n  padding: 0;\n}'
+      },
+      {
+        id: 't-css-2',
+        topic: 'CSS',
+        difficulty: 'Intermediate',
+        q: 'What is the difference between Flexbox and CSS Grid?',
+        ans: 'Flexbox is one-dimensional (handles alignment along either a single row OR column). CSS Grid is two-dimensional (handles rows AND columns simultaneously). Use Flexbox for navbars and components; use Grid for major page layouts.'
+      },
+
+      // JavaScript
+      {
+        id: 't-js-1',
+        topic: 'JavaScript',
+        difficulty: 'Beginner',
+        q: 'What is the difference between var, let, and const?',
+        ans: 'var is function-scoped and hoisted with undefined. let and const are block-scoped and stay in the Temporal Dead Zone until initialized. const cannot be reassigned; let can be updated.',
+        code: 'const maxAttempts = 3;\nlet score = 0;\nscore += 1;'
+      },
+      {
+        id: 't-js-2',
+        topic: 'JavaScript',
+        difficulty: 'Intermediate',
+        q: 'What is a Closure in JavaScript and give an example?',
+        ans: 'A closure is a function bundled together with references to its surrounding lexical environment. It gives an inner function access to an outer function’s variables even after the outer function has returned.',
+        code: 'function createCounter() {\n  let count = 0;\n  return function() {\n    count++;\n    return count;\n  };\n}\nconst counter = createCounter();\nconsole.log(counter()); // 1'
+      },
+      {
+        id: 't-js-3',
+        topic: 'JavaScript',
+        difficulty: 'Intermediate',
+        q: 'How does the JavaScript Event Loop work?',
+        ans: 'JavaScript is single-threaded. Synchronous code executes on the Call Stack. Asynchronous tasks (fetch, setTimeout, Promises) are handled by Web APIs and queued. Once the Call Stack is empty, the Event Loop takes microtasks (Promises) first, then macrotasks.'
+      },
+
+      // Python
+      {
+        id: 't-py-1',
+        topic: 'Python',
+        difficulty: 'Beginner',
+        q: 'What is the difference between a List and a Tuple in Python?',
+        ans: 'Lists are mutable (elements can be added, updated, or removed using square brackets [1, 2]). Tuples are immutable (read-only using parentheses (1, 2)). Tuples are faster and consume less memory.',
+        code: 'my_list = [1, 2]\nmy_list.append(3)\nmy_tuple = (1, 2) # cannot be modified'
+      },
+      {
+        id: 't-py-2',
+        topic: 'Python',
+        difficulty: 'Intermediate',
+        q: 'What are Python Generators and why are they memory efficient?',
+        ans: 'Generators use the yield keyword to produce values on-demand one at a time (lazy evaluation) rather than storing an entire dataset in RAM at once.',
+        code: 'def count_to(n):\n    val = 1\n    while val <= n:\n        yield val\n        val += 1'
+      },
+
+      // Java
+      {
+        id: 't-java-1',
+        topic: 'Java',
+        difficulty: 'Beginner',
+        q: 'Explain the four pillars of Object-Oriented Programming (OOP).',
+        ans: '1. Encapsulation: Bundling data and methods with private fields and getters/setters. 2. Abstraction: Hiding internal complexity with interfaces and abstract classes. 3. Inheritance: Reusing parent class properties via extends. 4. Polymorphism: Performing actions in different ways via method overloading and overriding.'
+      },
+      {
+        id: 't-java-2',
+        topic: 'Java',
+        difficulty: 'Intermediate',
+        q: 'What is the difference between == and .equals() in Java?',
+        ans: '== compares memory addresses (object references) to check if both variables point to the same location in heap memory. .equals() compares the actual text or logical content inside the objects.',
+        code: 'String s1 = new String("abc");\nString s2 = new String("abc");\nSystem.out.println(s1 == s2);      // false\nSystem.out.println(s1.equals(s2)); // true'
+      },
+
+      // C & C++
+      {
+        id: 't-c-1',
+        topic: 'C & C++',
+        difficulty: 'Beginner',
+        q: 'What is a pointer in C/C++ and what does dereferencing mean?',
+        ans: 'A pointer is a variable that stores the memory address of another variable. The & operator retrieves the address; the * operator dereferences the pointer to read or write the value at that address.',
+        code: 'int num = 42;\nint* ptr = &num;\nprintf("Value: %d", *ptr); // 42'
+      },
+      {
+        id: 't-c-2',
+        topic: 'C & C++',
+        difficulty: 'Intermediate',
+        q: 'What is a memory leak and how do you prevent it?',
+        ans: 'A memory leak happens when dynamically allocated heap memory (via malloc or new) is not freed back to the OS. In C, pair every malloc() with free(). In modern C++, use Smart Pointers (std::unique_ptr) or RAII to release memory automatically.'
+      },
+
+      // SQL & DBMS
+      {
+        id: 't-sql-1',
+        topic: 'SQL',
+        difficulty: 'Beginner',
+        q: 'What is the difference between INNER JOIN, LEFT JOIN, and RIGHT JOIN?',
+        ans: 'INNER JOIN returns only rows with matches in both tables. LEFT JOIN returns all rows from the left table and matched rows from the right (unmatched right columns are NULL). RIGHT JOIN returns all rows from the right table.',
+        code: 'SELECT u.name, o.order_id\nFROM users u\nINNER JOIN orders o ON u.id = o.user_id;'
+      },
+      {
+        id: 't-dbms-1',
+        topic: 'DBMS',
+        difficulty: 'Beginner',
+        q: 'What are the ACID properties in database transactions?',
+        ans: '1. Atomicity: All or nothing—if any statement fails, the transaction rolls back. 2. Consistency: Moves the database from one valid state to another. 3. Isolation: Concurrent transactions do not conflict. 4. Durability: Committed data survives system crashes.'
+      },
+
+      // DSA
+      {
+        id: 't-dsa-1',
+        topic: 'DSA',
+        difficulty: 'Beginner',
+        q: 'What is Big-O notation and difference between O(1), O(n), and O(n²)?',
+        ans: 'Big-O describes an algorithm’s upper bound execution time as input size (n) grows. O(1) is constant time (e.g. array index lookup). O(n) is linear time (e.g. searching through an unsorted array). O(n²) is quadratic time (e.g. nested loops in bubble sort).'
+      },
+      {
+        id: 't-dsa-2',
+        topic: 'DSA',
+        difficulty: 'Intermediate',
+        q: 'How does a Hash Table work and how are collisions handled?',
+        ans: 'A Hash Table maps keys to bucket indices using a hash function, achieving average O(1) lookups. Collisions (when two keys hash to the same bucket) are handled via Separate Chaining (linked lists in buckets) or Open Addressing (probing next slots).'
+      },
+
+      // Operating Systems & Networks
+      {
+        id: 't-os-1',
+        topic: 'Operating Systems',
+        difficulty: 'Beginner',
+        q: 'What is the difference between a Process and a Thread?',
+        ans: 'A process is an executing program with its own isolated address space. A thread is a lightweight execution unit inside a process. Multiple threads share the same heap memory and file descriptors, making thread context switching faster.'
+      },
+      {
+        id: 't-cn-1',
+        topic: 'Computer Networks',
+        difficulty: 'Beginner',
+        q: 'What is the difference between TCP and UDP?',
+        ans: 'TCP is connection-oriented, reliable, and guarantees in-order packet delivery using a 3-way handshake (SYN, SYN-ACK, ACK). UDP is connectionless and lightweight without retransmissions, ideal for live video streaming and gaming.'
+      },
+
+      // PHP
+      {
+        id: 't-php-1',
+        topic: 'PHP',
+        difficulty: 'Beginner',
+        q: 'What is the difference between include and require in PHP?',
+        ans: 'Both load and evaluate external files. include produces an E_WARNING if the file is missing and continues script execution. require produces a fatal E_COMPILE_ERROR and stops execution immediately. Use require for essential configs.'
+      }
+    ];
+
+    const APTITUDE_QUESTIONS = [
+      {
+        id: 'apt-1',
+        topic: 'Percentages',
+        q: 'If 30% of a number is 120, what is 45% of that same number?',
+        options: ['150', '180', '210', '240'],
+        correctIndex: 1,
+        exp: 'Step 1: Let the number be x. 0.30 * x = 120 => x = 120 / 0.30 = 400. Step 2: 45% of 400 = 0.45 * 400 = 180.'
+      },
+      {
+        id: 'apt-2',
+        topic: 'Profit and Loss',
+        q: 'A shopkeeper buys an item for $250 and sells it for $300. What is his profit percentage?',
+        options: ['16.67%', '20%', '25%', '15%'],
+        correctIndex: 1,
+        exp: 'Cost Price = $250. Selling Price = $300. Profit = $50. Profit % = (50 / 250) * 100 = 20%.'
+      },
+      {
+        id: 'apt-3',
+        topic: 'Time and Work',
+        q: 'Person A completes a task in 12 days; Person B completes it in 6 days. How many days will they take working together?',
+        options: ['3 days', '4 days', '5 days', '4.5 days'],
+        correctIndex: 1,
+        exp: 'Combined 1-day work = 1/12 + 1/6 = 1/12 + 2/12 = 3/12 = 1/4. Together they take 4 days.'
+      },
+      {
+        id: 'apt-4',
+        topic: 'Number Series',
+        q: 'What is the next number in the series: 3, 7, 15, 31, 63, ?',
+        options: ['125', '127', '129', '131'],
+        correctIndex: 1,
+        exp: 'Pattern: (3*2)+1 = 7, (7*2)+1 = 15, (15*2)+1 = 31, (31*2)+1 = 63. Next is (63*2)+1 = 127.'
+      },
+      {
+        id: 'apt-5',
+        topic: 'Numerical Ability',
+        q: 'The average of 5 numbers is 27. If one number is excluded, the average becomes 25. What was the excluded number?',
+        options: ['30', '35', '32', '37'],
+        correctIndex: 1,
+        exp: 'Sum of 5 numbers = 5 * 27 = 135. Sum of remaining 4 numbers = 4 * 25 = 100. Excluded number = 135 - 100 = 35.'
+      },
+      {
+        id: 'apt-6',
+        topic: 'Logical Reasoning',
+        q: 'Pointing to a photograph of a boy, Suresh said: "He is the son of the only son of my mother." How is Suresh related to the boy?',
+        options: ['Brother', 'Uncle', 'Father', 'Grandfather'],
+        correctIndex: 2,
+        exp: '"The only son of my mother" is Suresh himself. The boy is Suresh\'s son, so Suresh is the Father.'
+      },
+      {
+        id: 'apt-7',
+        topic: 'Verbal Ability',
+        q: 'Choose the word that is most nearly OPPOSITE in meaning to: CANDID',
+        options: ['Blunt', 'Deceitful', 'Frank', 'Honest'],
+        correctIndex: 1,
+        exp: 'Candid means honest, straightforward, and sincere. The antonym is Deceitful (misleading or dishonest).'
+      },
+      {
+        id: 'apt-8',
+        topic: 'Percentages',
+        q: 'The population of a town increased from 50,000 to 65,000. What is the percentage increase?',
+        options: ['25%', '30%', '35%', '15%'],
+        correctIndex: 1,
+        exp: 'Increase = 15,000. Percentage Increase = (15,000 / 50,000) * 100 = 30%.'
+      }
+    ];
+
+    const HR_QUESTIONS = [
+      {
+        id: 'hr-1',
+        q: 'Tell me about yourself.',
+        why: 'Tests executive presence, communication structure, and how well you connect your degree to the job role.',
+        sample: 'I recently graduated with a degree in Computer Applications from XYZ College. During my studies, I focused on database management and built a campus attendance portal using Python and SQLite. That project taught me how to write clean code and handle real user edge cases. I am eager to start my career with your team as an entry-level software engineer, where I can build reliable features and learn from senior engineers.',
+        points: ['Use Present-Past-Future: current status, key projects, and why this role.', 'Highlight 1 concrete college project.', 'Keep delivery between 70 and 90 seconds (120-150 words).'],
+        mistakes: ['Reciting your entire school marks line-by-line.', 'Sharing personal family hobbies unrelated to work.', 'Rambling for more than 3 minutes.']
+      },
+      {
+        id: 'hr-2',
+        q: 'What are your strengths and weaknesses?',
+        why: 'Evaluates self-awareness, honesty, and whether you actively work to overcome challenges.',
+        sample: 'My key strength is analytical persistence—when debugging an SQL join issue in our semester project, I isolated subqueries systematically until the issue was solved. As for a weakness, early in college I used to hesitate asking for help when stuck. I realized this slowed down team velocity, so I established a personal 45-minute rule: if I cannot solve a roadblock after 45 minutes of documentation research, I consult a peer or mentor with a clear summary of what I already tested.',
+        points: ['Pick an honest, non-fatal weakness.', 'Always explain the concrete habit or system you use to manage it.', 'Back your strength with a short believable example.'],
+        mistakes: ['Saying "I have no weaknesses" or fake humblebrags like "I work too hard".', 'Mentioning a disqualifying weakness like "I often miss deadlines".']
+      },
+      {
+        id: 'hr-3',
+        q: 'Why should we select you as a fresher?',
+        why: 'Checks your learning agility, enthusiasm, and realistic self-confidence.',
+        sample: 'While I am at the start of my professional career, I bring a solid foundation in computer science fundamentals, high energy, and adaptability. During college, I completed two projects beyond my syllabus and practiced coding consistently. I do not come with legacy habits—I am eager to be mentored on your coding standards and ready to put in the focused effort needed to become a productive contributor.',
+        points: ['Emphasize adaptability, eagerness to learn, and strong core foundation.', 'Mention proof of initiative (projects, hackathons, consistent coding).'],
+        mistakes: ['Pleading for a job.', 'Making unrealistic promises like "I know everything".']
+      },
+      {
+        id: 'hr-4',
+        q: 'Why do you want to join our company?',
+        why: 'Verifies whether you researched the organization or simply mass-applied.',
+        sample: 'I have followed your engineering team\'s work on scalable client systems. Your organization is recognized for its structured campus onboarding and mentorship culture. Joining your team provides both the challenging environment and the learning framework I need to grow into a dependable engineer.',
+        points: ['Mention 1-2 real facts about the company.', 'Connect their mission to your career goals.'],
+        mistakes: ['Generic flattery that could apply to any random IT firm.', 'Focusing solely on salary or remote perks.']
+      },
+      {
+        id: 'hr-5',
+        q: 'Describe a challenge you overcame during a college project.',
+        why: 'Assesses problem solving, team collaboration, and emotional composure under pressure.',
+        sample: 'Two weeks before our final-year project submission, our team realized our database schema was missing foreign key constraints, causing orphaned records. Tensions were rising. Instead of panicking, I organized a 30-minute sync where we mapped out table relationships on a whiteboard. I volunteered to refactor the migration script. We fixed the schema and earned an A grade from our faculty panel.',
+        points: ['Use STAR: Situation, Task, Action taken, Result.', 'Focus on your constructive contribution without blaming others.'],
+        mistakes: ['Blaming team members or professors.', 'Choosing a trivial challenge.']
+      },
+      {
+        id: 'hr-6',
+        q: 'Do you have any questions for the interviewer?',
+        why: 'Shows engagement and proactive interest in the team.',
+        sample: 'Yes, thank you! What does a typical onboarding journey look like for a campus fresher joining this engineering team? And what are the qualities displayed by freshers who succeeded most quickly in this role over the past year?',
+        points: ['Always ask 1-2 thoughtful questions about team culture or onboarding.', 'Avoid asking salary or leave policy in the initial round.'],
+        mistakes: ['Saying "No, I have no questions."']
+      }
+    ];
+
+    const MOCK_QUESTIONS = {
+      'Software Developer': [
+        { q: 'How do you approach debugging a program that compiles without errors but produces the wrong output?', hint: 'Discuss reproducing with minimal inputs, print/log statements, or step-through debuggers.' },
+        { q: 'Can you explain the trade-offs between an Array and a Linked List?', hint: 'Mention contiguous memory vs scattered pointers, O(1) index access vs O(n) traversal.' },
+        { q: 'What is the purpose of unit testing and how do you write effective test cases?', hint: 'Highlight verifying individual functions, regression safety, and testing edge cases.' }
+      ],
+      'Web Developer': [
+        { q: 'What are the most effective ways to optimize the loading speed of a slow webpage?', hint: 'Mention image compression, lazy loading, script minification, and browser caching.' },
+        { q: 'Explain what RESTful APIs are and how GET and POST differ in idempotency.', hint: 'Clarify stateless communication and why GET is safe/idempotent while POST is not.' },
+        { q: 'What is the difference between client-side rendering (SPA) and server-side rendering?', hint: 'Discuss initial bundle download, SEO indexing, and subsequent page navigation speed.' }
+      ],
+      'Data Analyst': [
+        { q: 'What is your step-by-step process when you receive a messy, unfamiliar dataset?', hint: 'Discuss exploratory data analysis (EDA), handling nulls, checking duplicates, and types.' },
+        { q: 'Explain the difference between WHERE and HAVING in SQL with a practical example.', hint: 'WHERE filters rows before aggregation; HAVING filters groups after GROUP BY.' }
+      ],
+      'Software Tester': [
+        { q: 'What is the difference between Black Box Testing and White Box Testing?', hint: 'Black box tests specifications without code visibility; White box tests internal code branches.' },
+        { q: 'What are the essential ingredients of a clear, reproducible bug report?', hint: 'Title, steps to reproduce, expected vs actual result, severity, and logs.' }
+      ],
+      'IT Support': [
+        { q: 'A user states their computer cannot connect to the internet. Walk me through troubleshooting.', hint: 'Start physical: Wi-Fi toggle/cable, ping localhost 127.0.0.1, check IP, ping gateway, check DNS.' }
+      ]
+    };
+
+    const COMPANY_DATA = [
+      {
+        id: 'infosys',
+        name: 'Infosys',
+        badge: 'Campus Hiring',
+        overview: 'Infosys assessments evaluate reasoning ability, mathematical ability, verbal ability, and pseudocode followed by a technical/HR discussion.',
+        rounds: ['Online Assessment (100 mins: Reasoning, Math, Verbal, Pseudocode)', 'Technical Interview (Projects, SQL, OOP, DSA basics)', 'HR Interview (Communication, behavioral, adaptability)'],
+        tips: 'Time management is key. Do not get stuck on any single reasoning puzzle for over 2 minutes. Review SQL joins and your final year project thoroughly.'
+      },
+      {
+        id: 'tcs',
+        name: 'TCS (NQT)',
+        badge: 'National Qualifier Test',
+        overview: 'TCS hiring leverages the National Qualifier Test (NQT) covering cognitive foundational sections and hands-on coding.',
+        rounds: ['Cognitive & Technical Test (165 mins: Numerical, Verbal, Reasoning, Coding)', 'Technical Interview (Code logic, OOPs, SDLC models, project)', 'Managerial & HR Interview (Adaptability, teamwork, shift flexibility)'],
+        tips: 'Focus on accuracy as negative marking may apply. Handle boundary cases (0, negative values) in your coding problems.'
+      },
+      {
+        id: 'wipro',
+        name: 'Wipro',
+        badge: 'Elite National Talent Hunt',
+        overview: 'Wipro evaluations cover quantitative aptitude, logical reasoning, verbal ability, written communication, and programming.',
+        rounds: ['Aptitude & Written Assessment (120 mins)', 'Coding Round (60 mins: 1-2 coding problems)', 'Technical & HR Discussion (25-35 mins)'],
+        tips: 'In written communication tasks, write clear paragraphs with proper punctuation. Avoid slang or abbreviations.'
+      },
+      {
+        id: 'accenture',
+        name: 'Accenture',
+        badge: 'Associate Software Engineer',
+        overview: 'Accenture assesses candidates across cognitive ability, technical pseudocode, hands-on coding, and an interactive audio communication test.',
+        rounds: ['Cognitive & Technical Assessment (90 mins: Critical thinking, pseudocode, cloud basics)', 'Coding Assessment (45 mins: 2 questions)', 'Communication Assessment (20 mins: Spoken English & listening comprehension)', 'Virtual Interview (Projects & behavioral)'],
+        tips: 'Trace variable states carefully in pseudocode loops. During audio tests, speak in a quiet room at a steady, natural pace.'
+      },
+      {
+        id: 'cognizant',
+        name: 'Cognizant',
+        badge: 'GenC & GenC Elevate',
+        overview: 'Cognizant tests numerical and analytical reasoning, verbal ability, and code debugging, followed by technical interviews.',
+        rounds: ['Aptitude & Skill Assessment (100 mins)', 'Technical Interview (Deep dive into project, database, and language concepts)', 'HR Interview (Culture fit, adaptability)'],
+        tips: 'Review code output prediction: check pre/post increment operators, pointer arithmetic, and loop bounds.'
+      }
+    ];
+
+    const WORKPLACE_PHRASES = [
+      {
+        situation: 'You need clarification on an interview question.',
+        casual: '"What? I didn\'t get you. Repeat."',
+        pro: '"Could you please clarify what specific constraints or use cases you would like me to focus on?"',
+        why: 'Shows active listening and intent to provide a tailored answer rather than guessing.'
+      },
+      {
+        situation: 'You disagree with a team proposal.',
+        casual: '"That will never work, your code is too slow."',
+        pro: '"I understand that approach. I have a slight concern about database performance under peak load; could we explore caching as an alternative?"',
+        why: 'Validates their view first, raises a technical trade-off constructively, and invites collaboration.'
+      },
+      {
+        situation: 'You do not know the answer to a question.',
+        casual: '"I don\'t know this."',
+        pro: '"I haven\'t worked with that specific tool yet, but based on my experience with SQL, my approach would be to look at the schema docs. I would be very eager to learn it."',
+        why: 'Honesty is respected; bridging with adjacent knowledge demonstrates problem solving.'
+      }
+    ];
+
+    const JOB_GUIDES = [
+      {
+        title: 'How to Prepare for Your First Job Interview',
+        summary: 'A step-by-step checklist covering everything you need to do 48 hours, 24 hours, and 1 hour before an interview.',
+        points: [
+          'Research the company: Visit their About page, product offerings, and recent tech blog posts.',
+          'Re-read your own resume: Be ready to explain every project, tech stack item, and coursework mentioned.',
+          'Test your setup: Ensure camera angle is at eye level, lighting is in front of you, and test your mic.',
+          'Prepare your dress: Business casual or formal even for remote video interviews.'
+        ],
+        advice: 'Treat the interview as a collaborative discussion where both parties are evaluating mutual fit.'
+      },
+      {
+        title: 'Top 8 Resume Mistakes Freshers Make',
+        summary: 'Recruiters scan fresher resumes in 6-10 seconds. Avoid these common traps.',
+        points: [
+          'Multi-page resumes: Freshers should strictly stick to 1 high-impact page.',
+          'Vague project descriptions: Instead of "Made a shopping site", write "Engineered an e-commerce platform using Python and SQLite with live cart filtering."',
+          'Rating skills with stars: Avoid self-assigned 4/5 star bars; let your projects demonstrate your skills.',
+          'Unprofessional email addresses: Use a clean firstname.lastname format.',
+          'Saving as Word doc instead of PDF: Word files shift formatting across different screens; always export PDF.'
+        ],
+        advice: 'Every project bullet point should state: What was built, with what tech stack, and what was the outcome.'
+      },
+      {
+        title: 'How to Message Recruiters on LinkedIn and Email',
+        summary: 'Cold outreach works if done courteously, concisely, and with immediate relevance.',
+        points: [
+          'Keep messages under 120 words.',
+          'State your degree, graduation year, core strengths, and the specific role or Job ID.',
+          'Include a direct link to your GitHub or portfolio.',
+          'Never just send "Hi" or "Sir please give me job"—always send a complete polite message.'
+        ],
+        advice: 'Make it effortless for the recruiter to review your credentials in 30 seconds.'
+      }
+    ];
+
+    const DEFAULT_30_DAY_TASKS = [
+      { id: 'task-1', title: 'Audit Resume & Finalize Profile', desc: 'Create a clean 1-page resume focusing on student projects and technical skills.', day: 1, done: false },
+      { id: 'task-2', title: 'Master Self-Introduction', desc: 'Draft and rehearse your 90-second "Tell me about yourself" response.', day: 2, done: false },
+      { id: 'task-3', title: 'Aptitude: Percentages & Ratios', desc: 'Review core percentage conversion formulas and solve 10 practice questions.', day: 3, done: false },
+      { id: 'task-4', title: 'Technical: OOP Principles', desc: 'Revise Encapsulation, Abstraction, Inheritance, and Polymorphism with code examples.', day: 4, done: false },
+      { id: 'task-5', title: 'Aptitude: Profit & Loss', desc: 'Solve 10 problems on Cost Price, Selling Price, and Discount calculations.', day: 5, done: false },
+      { id: 'task-6', title: 'Technical: SQL Joins & Group By', desc: 'Practice INNER, LEFT, RIGHT joins and HAVING clauses.', day: 6, done: false },
+      { id: 'task-7', title: 'Week 1 Review & Mock Interview', desc: 'Run your first Mock Interview session and review areas for improvement.', day: 7, done: false },
+      { id: 'task-8', title: 'Aptitude: Time and Work', desc: 'Solve combined work rate problems and reciprocal day equations.', day: 8, done: false },
+      { id: 'task-9', title: 'Technical: DBMS & ACID Properties', desc: 'Study Atomicity, Consistency, Isolation, Durability, and Normalization.', day: 9, done: false },
+      { id: 'task-10', title: 'HR: Strengths & Weaknesses', desc: 'Prepare honest answers for strengths and weaknesses without scripted clichés.', day: 10, done: false }
+    ];
+
+    /* =========================================================
+       APPLICATION STATE & LOCAL STORAGE
+       ========================================================= */
+
+    let appState = {
+      currentTab: 'dashboard',
+      profile: {
+        name: 'Candidate',
+        education: 'BCA',
+        targetRole: 'Software Developer',
+        experience: 'College Student',
+        company: 'TCS'
+      },
+      savedTechIds: [],
+      completedTechIds: [],
+      quizAttempts: [],
+      mockSessions: [],
+      studyTasks: DEFAULT_30_DAY_TASKS,
+      selectedTechTopic: 'All',
+      selectedAptTopic: 'All',
+      showOnlySavedTech: false,
+      plannerFilter: 'all',
+
+      // Aptitude Test Runtime State
+      aptitude: {
+        isRunning: false,
+        questions: [],
+        currentIndex: 0,
+        userAnswers: {},
+        timerSeconds: 600,
+        isPaused: false,
+        timerInterval: null
+      },
+
+      // Mock Interview Runtime State
+      mock: {
+        isActive: false,
+        role: 'Software Developer',
+        difficulty: 'Beginner',
+        questions: [],
+        currentIndex: 0,
+        userAnswer: '',
+        isRecording: false,
+        recognition: null,
+        lastEvaluation: null
+      }
+    };
+
+    // Load from LocalStorage safely
+    function loadStoredData() {
+      try {
+        const p = localStorage.getItem('ir_profile');
+        if (p) appState.profile = JSON.parse(p);
+        
+        const s = localStorage.getItem('ir_saved_tech');
+        if (s) appState.savedTechIds = JSON.parse(s);
+
+        const c = localStorage.getItem('ir_completed_tech');
+        if (c) appState.completedTechIds = JSON.parse(c);
+
+        const q = localStorage.getItem('ir_quiz_attempts');
+        if (q) appState.quizAttempts = JSON.parse(q);
+
+        const m = localStorage.getItem('ir_mock_sessions');
+        if (m) appState.mockSessions = JSON.parse(m);
+
+        const t = localStorage.getItem('ir_study_tasks');
+        if (t) appState.studyTasks = JSON.parse(t);
+      } catch (err) {
+        console.warn('LocalStorage unavailable or restricted:', err);
+      }
+    }
+
+    function saveState(key, val) {
+      try {
+        localStorage.setItem(key, JSON.stringify(val));
+      } catch (err) {
+        console.warn('Error saving to LocalStorage:', err);
+      }
+    }
+
+    /* =========================================================
+       READINESS SCORE CALCULATION
+       ========================================================= */
+
+    function computeReadiness() {
+      const techPoints = Math.min(30, Math.round((appState.completedTechIds.length / 12) * 30));
+      
+      let aptPoints = 0;
+      if (appState.quizAttempts.length > 0) {
+        const avg = appState.quizAttempts.slice(0, 5).reduce((a, b) => a + b.pct, 0) / Math.min(5, appState.quizAttempts.length);
+        aptPoints = Math.round((avg / 100) * 30);
+      }
+
+      let mockPoints = 0;
+      if (appState.mockSessions.length > 0) {
+        const avgMock = appState.mockSessions.reduce((a, b) => a + b.score, 0) / appState.mockSessions.length;
+        mockPoints = Math.round((avgMock / 100) * 25);
+      }
+
+      const doneTasks = appState.studyTasks.filter(t => t.done).length;
+      const totalTasks = appState.studyTasks.length || 1;
+      const taskPoints = Math.min(15, Math.round((doneTasks / totalTasks) * 15));
+
+      const total = Math.min(100, techPoints + aptPoints + mockPoints + taskPoints);
+
+      return {
+        total,
+        tech: techPoints,
+        apt: aptPoints,
+        mock: mockPoints,
+        task: taskPoints,
+        completedTech: appState.completedTechIds.length,
+        quizCount: appState.quizAttempts.length,
+        mockCount: appState.mockSessions.length,
+        taskCount: doneTasks
+      };
+    }
+
+    function updateDashboardMetrics() {
+      const r = computeReadiness();
+      document.getElementById('dash-overall-dial').textContent = `${r.total}%`;
+      document.getElementById('score-tech-text').textContent = `${r.tech}/30`;
+      document.getElementById('score-apt-text').textContent = `${r.apt}/30`;
+      document.getElementById('score-mock-text').textContent = `${r.mock}/25`;
+      document.getElementById('score-task-text').textContent = `${r.task}/15`;
+
+      document.getElementById('bar-tech-fill').style.width = `${(r.tech / 30) * 100}%`;
+      document.getElementById('bar-apt-fill').style.width = `${(r.apt / 30) * 100}%`;
+      document.getElementById('bar-mock-fill').style.width = `${(r.mock / 25) * 100}%`;
+      document.getElementById('bar-task-fill').style.width = `${(r.task / 15) * 100}%`;
+
+      document.getElementById('stat-tech-count').textContent = `${r.completedTech} mastered`;
+      document.getElementById('stat-apt-count').textContent = `${r.quizCount} tests taken`;
+      document.getElementById('stat-mock-count').textContent = `${r.mockCount} sessions`;
+      document.getElementById('stat-task-count').textContent = `${r.taskCount} tasks finished`;
+
+      document.getElementById('hero-profile-tag').textContent = `${appState.profile.education} · ${appState.profile.targetRole}`;
+      document.getElementById('profile-summary-text').textContent = `${appState.profile.education} · ${appState.profile.targetRole}`;
+      document.getElementById('dash-recom-title').textContent = `Recommended Focus for ${appState.profile.targetRole}`;
+      document.getElementById('dash-recom-desc').textContent = `Based on your ${appState.profile.education} background, prioritize fundamental questions, practice 10 aptitude problems daily, and rehearse your 90-second self-introduction.`;
+    }
+
+    /* =========================================================
+       VIEW ROUTING
+       ========================================================= */
+
+    function switchTab(tabName) {
+      appState.currentTab = tabName;
+
+      // Update View Visibility
+      document.querySelectorAll('.app-view').forEach(el => {
+        el.style.display = 'none';
+      });
+      const target = document.getElementById(`view-${tabName}`);
+      if (target) target.style.display = 'block';
+
+      // Update Nav Link Active States
+      document.querySelectorAll('.nav-link').forEach(btn => btn.classList.remove('active'));
+      const activeDesktop = document.getElementById(`nav-btn-${tabName}`);
+      if (activeDesktop) activeDesktop.classList.add('active');
+
+      document.querySelectorAll('.bottom-tab').forEach(btn => btn.classList.remove('active'));
+      const activeBottom = document.getElementById(`bottom-tab-${tabName}`);
+      if (activeBottom) activeBottom.classList.add('active');
+
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+
+      // Tab specific initializers
+      if (tabName === 'dashboard') updateDashboardMetrics();
+      if (tabName === 'technical') renderTechnicalQuestions();
+      if (tabName === 'planner') renderStudyTasks();
+    }
+
+    function toggleMobileMenu() {
+      const menu = document.getElementById('mobile-dropdown-menu');
+      menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+    }
+
+    /* =========================================================
+       MODAL CONTROLS
+       ========================================================= */
+
+    function openModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'flex';
+
+      if (id === 'profile-modal') {
+        document.getElementById('modal-profile-name').value = appState.profile.name;
+        document.getElementById('modal-profile-edu').value = appState.profile.education;
+        document.getElementById('modal-profile-role').value = appState.profile.targetRole;
+        document.getElementById('modal-profile-exp').value = appState.profile.experience;
+        document.getElementById('modal-profile-company').value = appState.profile.company || '';
+      }
+    }
+
+    function closeModal(id) {
+      const el = document.getElementById(id);
+      if (el) el.style.display = 'none';
+    }
+
+    function saveProfileFromModal() {
+      appState.profile.name = document.getElementById('modal-profile-name').value.trim() || 'Candidate';
+      appState.profile.education = document.getElementById('modal-profile-edu').value;
+      appState.profile.targetRole = document.getElementById('modal-profile-role').value;
+      appState.profile.experience = document.getElementById('modal-profile-exp').value;
+      appState.profile.company = document.getElementById('modal-profile-company').value.trim();
+
+      saveState('ir_profile', appState.profile);
+      updateDashboardMetrics();
+      closeModal('profile-modal');
+    }
+
+    /* =========================================================
+       TECHNICAL QUESTIONS SECTION
+       ========================================================= */
+
+    const TECH_TOPICS = ['All', 'HTML', 'CSS', 'JavaScript', 'Python', 'Java', 'C & C++', 'SQL', 'DBMS', 'DSA', 'Operating Systems', 'Computer Networks', 'PHP'];
+
+    function initTechnicalTopics() {
+      const container = document.getElementById('tech-topics-container');
+      container.innerHTML = '';
+      TECH_TOPICS.forEach(topic => {
+        const btn = document.createElement('button');
+        btn.className = `btn btn-sm ${appState.selectedTechTopic === topic ? 'btn-primary' : 'btn-secondary'}`;
+        btn.textContent = topic;
+        btn.onclick = () => {
+          appState.selectedTechTopic = topic;
+          initTechnicalTopics();
+          renderTechnicalQuestions();
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    function renderTechnicalQuestions() {
+      const search = (document.getElementById('tech-search-input')?.value || '').toLowerCase();
+      const diff = document.getElementById('tech-diff-filter')?.value || 'All';
+      const container = document.getElementById('technical-questions-list');
+      
+      document.getElementById('saved-count-num').textContent = appState.savedTechIds.length;
+
+      const filtered = TECHNICAL_QUESTIONS.filter(q => {
+        const matchTopic = appState.selectedTechTopic === 'All' || q.topic === appState.selectedTechTopic;
+        const matchDiff = diff === 'All' || q.difficulty === diff;
+        const matchSaved = !appState.showOnlySavedTech || appState.savedTechIds.includes(q.id);
+        const matchSearch = !search || q.q.toLowerCase().includes(search) || q.ans.toLowerCase().includes(search) || q.topic.toLowerCase().includes(search);
+        return matchTopic && matchDiff && matchSaved && matchSearch;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = `
+          <div class="card" style="text-align: center; padding: 2rem;">
+            <p class="text-muted" style="font-size: 0.8125rem;">No technical questions found matching your filter.</p>
+          </div>
+        `;
+        return;
+      }
+
+      container.innerHTML = '';
+      filtered.forEach((q, index) => {
+        const isSaved = appState.savedTechIds.includes(q.id);
+        const isMastered = appState.completedTechIds.includes(q.id);
+
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.borderColor = isMastered ? '#a7f3d0' : 'var(--slate-200)';
+        card.style.backgroundColor = isMastered ? '#f0fdf4' : '#ffffff';
+
+        card.innerHTML = `
+          <div style="display: flex; justify-content: space-between; align-items: flex-start; gap: 0.75rem;">
+            <div style="flex: 1;">
+              <div style="display: flex; gap: 0.35rem; align-items: center; margin-bottom: 0.35rem; font-size: 0.6875rem;">
+                <span class="tag tag-blue">${q.topic}</span>
+                <span class="tag tag-slate">${q.difficulty}</span>
+                ${isMastered ? '<span class="tag tag-green">✓ Mastered</span>' : ''}
+              </div>
+              <h3 style="font-size: 0.9375rem; font-weight: 700; line-height: 1.4; color: var(--slate-900);">
+                ${q.q}
+              </h3>
+            </div>
+
+            <div style="display: flex; gap: 0.25rem;">
+              <button onclick="toggleSaveTech('${q.id}')" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.5rem;" title="${isSaved ? 'Remove bookmark' : 'Bookmark question'}">
+                ${isSaved ? '★' : '☆'}
+              </button>
+              <button onclick="toggleMasteredTech('${q.id}')" class="btn btn-secondary btn-sm" style="padding: 0.25rem 0.5rem;" title="${isMastered ? 'Mark incomplete' : 'Mark mastered'}">
+                ${isMastered ? '✓' : '○'}
+              </button>
+            </div>
+          </div>
+
+          <div style="margin-top: 0.75rem; padding-top: 0.75rem; border-top: 1px solid rgba(0,0,0,0.05); font-size: 0.8125rem; color: var(--slate-700); line-height: 1.5;">
+            <p>${q.ans}</p>
+            ${q.code ? `
+              <pre style="background: #0f172a; color: #f8fafc; padding: 0.75rem; border-radius: 0.5rem; margin-top: 0.5rem; overflow-x: auto;"><code>${escapeHTML(q.code)}</code></pre>
+            ` : ''}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    function toggleSaveTech(id) {
+      if (appState.savedTechIds.includes(id)) {
+        appState.savedTechIds = appState.savedTechIds.filter(i => i !== id);
+      } else {
+        appState.savedTechIds.push(id);
+      }
+      saveState('ir_saved_tech', appState.savedTechIds);
+      renderTechnicalQuestions();
+    }
+
+    function toggleMasteredTech(id) {
+      if (appState.completedTechIds.includes(id)) {
+        appState.completedTechIds = appState.completedTechIds.filter(i => i !== id);
+      } else {
+        appState.completedTechIds.push(id);
+      }
+      saveState('ir_completed_tech', appState.completedTechIds);
+      renderTechnicalQuestions();
+      updateDashboardMetrics();
+    }
+
+    function toggleShowOnlySaved() {
+      appState.showOnlySavedTech = !appState.showOnlySavedTech;
+      const btn = document.getElementById('tech-saved-toggle-btn');
+      btn.className = `btn btn-sm ${appState.showOnlySavedTech ? 'btn-primary' : 'btn-secondary'}`;
+      renderTechnicalQuestions();
+    }
+
+    /* =========================================================
+       APTITUDE PRACTICE ENGINE
+       ========================================================= */
+
+    const APTITUDE_CATEGORIES = ['All', 'Percentages', 'Profit and Loss', 'Time and Work', 'Number Series', 'Numerical Ability', 'Logical Reasoning', 'Verbal Ability'];
+
+    function initAptitudeCategories() {
+      const container = document.getElementById('aptitude-category-buttons');
+      container.innerHTML = '';
+      APTITUDE_CATEGORIES.forEach(cat => {
+        const btn = document.createElement('button');
+        btn.className = `btn btn-sm ${appState.selectedAptTopic === cat ? 'btn-primary' : 'btn-secondary'}`;
+        btn.textContent = cat;
+        btn.onclick = () => {
+          appState.selectedAptTopic = cat;
+          initAptitudeCategories();
+        };
+        container.appendChild(btn);
+      });
+    }
+
+    function startAptitudeTest() {
+      const filtered = appState.selectedAptTopic === 'All'
+        ? APTITUDE_QUESTIONS
+        : APTITUDE_QUESTIONS.filter(q => q.topic === appState.selectedAptTopic);
+
+      appState.aptitude.questions = filtered.slice(0, 8);
+      appState.aptitude.currentIndex = 0;
+      appState.aptitude.userAnswers = {};
+      appState.aptitude.timerSeconds = appState.aptitude.questions.length * 75; // 75s per question
+      appState.aptitude.isPaused = false;
+      appState.aptitude.isRunning = true;
+
+      document.getElementById('aptitude-setup-panel').style.display = 'none';
+      document.getElementById('aptitude-results-panel').style.display = 'none';
+      document.getElementById('aptitude-active-panel').style.display = 'block';
+
+      if (appState.aptitude.timerInterval) clearInterval(appState.aptitude.timerInterval);
+      appState.aptitude.timerInterval = setInterval(updateAptitudeTimer, 1000);
+
+      renderAptitudeQuestion();
+    }
+
+    function updateAptitudeTimer() {
+      if (appState.aptitude.isPaused) return;
+
+      appState.aptitude.timerSeconds--;
+      const m = Math.floor(appState.aptitude.timerSeconds / 60);
+      const s = appState.aptitude.timerSeconds % 60;
+      const badge = document.getElementById('apt-timer-badge');
+      badge.textContent = `${m.toString().padStart(2, '0')}:${s.toString().padStart(2, '0')}`;
+
+      if (appState.aptitude.timerSeconds <= 0) {
+        clearInterval(appState.aptitude.timerInterval);
+        submitAptitudeTest();
+      }
+    }
+
+    function toggleAptitudeTimer() {
+      appState.aptitude.isPaused = !appState.aptitude.isPaused;
+      document.getElementById('apt-pause-btn').textContent = appState.aptitude.isPaused ? 'Resume' : 'Pause';
+    }
+
+    function renderAptitudeQuestion() {
+      const q = appState.aptitude.questions[appState.aptitude.currentIndex];
+      const cur = appState.aptitude.currentIndex;
+      const total = appState.aptitude.questions.length;
+
+      document.getElementById('apt-q-tracker').textContent = `Question ${cur + 1} of ${total}`;
+      document.getElementById('apt-topic-label').textContent = q.topic;
+      document.getElementById('apt-question-text').textContent = q.q;
+
+      const optsContainer = document.getElementById('apt-options-container');
+      optsContainer.innerHTML = '';
+
+      q.options.forEach((opt, idx) => {
+        const isSelected = appState.aptitude.userAnswers[cur] === idx;
+        const btn = document.createElement('button');
+        btn.className = `btn btn-secondary`;
+        btn.style.justifyContent = 'flex-start';
+        btn.style.padding = '0.75rem 1rem';
+        btn.style.textAlign = 'left';
+        btn.style.borderColor = isSelected ? 'var(--primary)' : 'var(--slate-200)';
+        btn.style.backgroundColor = isSelected ? 'var(--primary-light)' : '#ffffff';
+        btn.style.fontWeight = isSelected ? '700' : '500';
+
+        btn.innerHTML = `
+          <span style="width: 22px; height: 22px; border-radius: 4px; background: ${isSelected ? 'var(--primary)' : 'var(--slate-100)'}; color: ${isSelected ? '#ffffff' : 'var(--slate-700)'}; display: inline-flex; align-items: center; justify-content: center; font-size: 0.6875rem; font-weight: 700; margin-right: 0.5rem;">
+            ${String.fromCharCode(65 + idx)}
+          </span>
+          ${opt}
+        `;
+        btn.onclick = () => {
+          appState.aptitude.userAnswers[cur] = idx;
+          renderAptitudeQuestion();
+        };
+        optsContainer.appendChild(btn);
+      });
+
+      // Controls
+      document.getElementById('apt-prev-btn').disabled = cur === 0;
+      document.getElementById('apt-next-btn').disabled = cur === total - 1;
+
+      // Palette
+      const palContainer = document.getElementById('apt-palette-container');
+      palContainer.innerHTML = '';
+      for (let i = 0; i < total; i++) {
+        const pBtn = document.createElement('button');
+        const isAnswered = appState.aptitude.userAnswers[i] !== undefined;
+        pBtn.className = `btn btn-sm`;
+        pBtn.style.padding = '0.2rem 0.45rem';
+        pBtn.style.minHeight = '28px';
+        pBtn.style.background = (i === cur) ? 'var(--primary)' : (isAnswered ? 'var(--emerald-50)' : 'var(--slate-100)');
+        pBtn.style.color = (i === cur) ? '#ffffff' : (isAnswered ? 'var(--emerald-700)' : 'var(--slate-700)');
+        pBtn.textContent = i + 1;
+        pBtn.onclick = () => {
+          appState.aptitude.currentIndex = i;
+          renderAptitudeQuestion();
+        };
+        palContainer.appendChild(pBtn);
+      }
+    }
+
+    function prevAptitudeQuestion() {
+      if (appState.aptitude.currentIndex > 0) {
+        appState.aptitude.currentIndex--;
+        renderAptitudeQuestion();
+      }
+    }
+
+    function nextAptitudeQuestion() {
+      if (appState.aptitude.currentIndex < appState.aptitude.questions.length - 1) {
+        appState.aptitude.currentIndex++;
+        renderAptitudeQuestion();
+      }
+    }
+
+    function submitAptitudeTest() {
+      clearInterval(appState.aptitude.timerInterval);
+      appState.aptitude.isRunning = false;
+
+      let correct = 0;
+      appState.aptitude.questions.forEach((q, idx) => {
+        if (appState.aptitude.userAnswers[idx] === q.correctIndex) {
+          correct++;
+        }
+      });
+
+      const total = appState.aptitude.questions.length;
+      const pct = Math.round((correct / total) * 100);
+
+      // Record quiz attempt
+      appState.quizAttempts.unshift({
+        topic: appState.selectedAptTopic,
+        score: correct,
+        total: total,
+        pct: pct,
+        date: new Date().toLocaleDateString()
+      });
+      saveState('ir_quiz_attempts', appState.quizAttempts);
+      updateDashboardMetrics();
+
+      document.getElementById('apt-result-score').textContent = `${correct} / ${total}`;
+      document.getElementById('apt-result-percent').textContent = `${pct}%`;
+
+      // Build Solutions List
+      const solList = document.getElementById('aptitude-solutions-list');
+      solList.innerHTML = '';
+      appState.aptitude.questions.forEach((q, idx) => {
+        const userChoice = appState.aptitude.userAnswers[idx];
+        const isRight = userChoice === q.correctIndex;
+
+        const row = document.createElement('div');
+        row.className = 'card';
+        row.innerHTML = `
+          <div style="display: flex; justify-content: space-between; font-size: 0.75rem; margin-bottom: 0.25rem;">
+            <span style="font-weight: 700; color: var(--slate-500);">Q${idx + 1}. ${q.topic}</span>
+            <span class="tag ${isRight ? 'tag-green' : 'tag-amber'}">${isRight ? '✓ Correct' : '✕ Incorrect / Skipped'}</span>
+          </div>
+          <h4 style="font-size: 0.875rem; margin-bottom: 0.5rem;">${q.q}</h4>
+          <div style="font-size: 0.75rem; color: var(--slate-600); margin-bottom: 0.5rem;">
+            <strong>Correct Answer:</strong> ${String.fromCharCode(65 + q.correctIndex)}. ${q.options[q.correctIndex]}
+            ${userChoice !== undefined && !isRight ? `<span style="color: var(--rose-600); margin-left: 0.5rem;">(You chose: ${String.fromCharCode(65 + userChoice)}. ${q.options[userChoice]})</span>` : ''}
+          </div>
+          <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.5rem; padding: 0.5rem 0.75rem; font-size: 0.75rem; color: var(--slate-700);">
+            <strong>Step-by-Step Solution:</strong> ${q.exp}
+          </div>
+        `;
+        solList.appendChild(row);
+      });
+
+      document.getElementById('aptitude-active-panel').style.display = 'none';
+      document.getElementById('aptitude-results-panel').style.display = 'block';
+    }
+
+    function closeAptitudeResults() {
+      document.getElementById('aptitude-results-panel').style.display = 'none';
+      document.getElementById('aptitude-setup-panel').style.display = 'block';
+    }
+
+    /* =========================================================
+       MOCK INTERVIEW SIMULATION (VOICE & TEXT EVALUATOR)
+       ========================================================= */
+
+    function startMockInterview() {
+      const role = document.getElementById('mock-role-select').value;
+      const diff = document.getElementById('mock-diff-select').value;
+
+      appState.mock.role = role;
+      appState.mock.difficulty = diff;
+      appState.mock.questions = MOCK_QUESTIONS[role] || MOCK_QUESTIONS['Software Developer'];
+      appState.mock.currentIndex = 0;
+      appState.mock.userAnswer = '';
+      appState.mock.isActive = true;
+
+      document.getElementById('mock-setup-panel').style.display = 'none';
+      document.getElementById('mock-active-panel').style.display = 'block';
+
+      renderMockQuestionTurn();
+    }
+
+    function renderMockQuestionTurn() {
+      const cur = appState.mock.currentIndex;
+      const q = appState.mock.questions[cur];
+
+      document.getElementById('mock-q-counter').textContent = `Question ${cur + 1} of ${appState.mock.questions.length} (${appState.mock.role})`;
+      document.getElementById('mock-question-display').textContent = q.q;
+      document.getElementById('mock-hint-display').textContent = `Preparation Tip: ${q.hint}`;
+
+      document.getElementById('mock-answer-input').value = '';
+      document.getElementById('mock-word-count').textContent = '0 words';
+      document.getElementById('mock-eval-report').style.display = 'none';
+      document.getElementById('mock-submit-btn-wrap').style.display = 'flex';
+      document.getElementById('mock-speech-notice').style.display = 'none';
+    }
+
+    function updateMockWordCount() {
+      const text = document.getElementById('mock-answer-input').value.trim();
+      const words = text ? text.split(/\s+/).length : 0;
+      document.getElementById('mock-word-count').textContent = `${words} words`;
+    }
+
+    function toggleSpeechRecording() {
+      const SpeechRecognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+      const notice = document.getElementById('mock-speech-notice');
+
+      if (!SpeechRecognition) {
+        notice.style.display = 'block';
+        notice.textContent = 'Voice dictation is not supported in this browser. Please type your answer directly in the box below.';
+        return;
+      }
+
+      if (appState.mock.isRecording) {
+        // Stop
+        if (appState.mock.recognition) appState.mock.recognition.stop();
+        appState.mock.isRecording = false;
+        document.getElementById('mock-mic-label').textContent = 'Dictate with Mic';
+        return;
+      }
+
+      try {
+        const recognition = new SpeechRecognition();
+        recognition.continuous = true;
+        recognition.interimResults = true;
+        recognition.lang = 'en-US';
+
+        recognition.onstart = () => {
+          appState.mock.isRecording = true;
+          document.getElementById('mock-mic-label').textContent = 'Listening... (Tap to stop)';
+          notice.style.display = 'block';
+          notice.textContent = 'Microphone listening. Speak clearly; recognized text will appear in the box.';
+        };
+
+        recognition.onerror = (e) => {
+          appState.mock.isRecording = false;
+          document.getElementById('mock-mic-label').textContent = 'Dictate with Mic';
+          notice.style.display = 'block';
+          if (e.error === 'not-allowed') {
+            notice.textContent = 'Microphone permission was denied. You can still type your answer in the text box.';
+          } else {
+            notice.textContent = `Speech recognition note: ${e.error}. You can type directly.`;
+          }
+        };
+
+        recognition.onend = () => {
+          appState.mock.isRecording = false;
+          document.getElementById('mock-mic-label').textContent = 'Dictate with Mic';
+        };
+
+        recognition.onresult = (event) => {
+          let str = '';
+          for (let i = event.resultIndex; i < event.results.length; i++) {
+            str += event.results[i][0].transcript;
+          }
+          const box = document.getElementById('mock-answer-input');
+          box.value = box.value.trim() ? `${box.value.trim()} ${str.trim()}` : str.trim();
+          updateMockWordCount();
+        };
+
+        appState.mock.recognition = recognition;
+        recognition.start();
+      } catch (err) {
+        notice.style.display = 'block';
+        notice.textContent = 'Unable to start speech recognition. Please type in the text box.';
+      }
+    }
+
+    // Transparent rule-based evaluator
+    function evaluateInterviewAnswerLocally(question, answer, role) {
+      const words = answer.trim().split(/\s+/).filter(Boolean);
+      const count = words.length;
+      let score = 55;
+      const strengths = [];
+      const improvements = [];
+
+      if (count < 20) {
+        improvements.push('Answer is very brief. Provide more background context and explain your reasoning.');
+        score -= 20;
+      } else if (count >= 20 && count < 60) {
+        strengths.push('Concise direct start.');
+        improvements.push('Add a concrete example from a college project or coursework.');
+        score += 10;
+      } else if (count >= 60 && count <= 200) {
+        strengths.push('Good length and depth (typical interview answers range from 70 to 160 words).');
+        score += 25;
+      } else {
+        strengths.push('Thorough coverage.');
+        improvements.push('Structure your answer more tightly so the interviewer can grasp the outcome immediately.');
+        score += 15;
+      }
+
+      const lower = answer.toLowerCase();
+      const hasExample = lower.includes('for example') || lower.includes('in my project') || lower.includes('we used') || lower.includes('i worked on');
+      const hasStructure = lower.includes('first') || lower.includes('because') || lower.includes('therefore') || lower.includes('result');
+
+      if (hasExample) {
+        strengths.push('Includes a reference to practical experience or project context.');
+        score += 15;
+      } else {
+        improvements.push('Include a specific project example to substantiate your claim.');
+      }
+
+      if (hasStructure) {
+        strengths.push('Structured logical flow with transitional connectors.');
+        score += 10;
+      }
+
+      const finalScore = Math.min(95, Math.max(35, score));
+
+      return {
+        score: finalScore,
+        explanation: `Score based on: Word count (${count} words), Structure (${hasStructure ? 'Structured' : 'Basic'}), Examples (${hasExample ? 'Included' : 'Needs project context'}).`,
+        strengths: strengths.length ? strengths : ['Clear initial attempt to address the question.'],
+        improvements: improvements.length ? improvements : ['Practice timed delivery to speak smoothly.'],
+        sample: `When answering "${question}", open by stating your direct conclusion in 1-2 clear sentences. Follow up with a specific project where you applied this principle, and conclude with the result or learning takeaway.`
+      };
+    }
+
+    function submitMockAnswer() {
+      const answer = document.getElementById('mock-answer-input').value.trim();
+      if (!answer) {
+        alert('Please speak or type your answer before submitting.');
+        return;
+      }
+
+      const q = appState.mock.questions[appState.mock.currentIndex];
+      const evaluation = evaluateInterviewAnswerLocally(q.q, answer, appState.mock.role);
+
+      document.getElementById('eval-score-num').textContent = evaluation.score;
+      document.getElementById('eval-score-exp').textContent = evaluation.explanation;
+
+      const sList = document.getElementById('eval-strengths-list');
+      sList.innerHTML = evaluation.strengths.map(s => `<li>${s}</li>`).join('');
+
+      const iList = document.getElementById('eval-improvements-list');
+      iList.innerHTML = evaluation.improvements.map(i => `<li>${i}</li>`).join('');
+
+      document.getElementById('eval-sample-answer').textContent = `"${evaluation.sample}"`;
+
+      document.getElementById('mock-submit-btn-wrap').style.display = 'none';
+      document.getElementById('mock-eval-report').style.display = 'block';
+
+      // Save to mock sessions history
+      appState.mockSessions.unshift({
+        role: appState.mock.role,
+        score: evaluation.score,
+        date: new Date().toLocaleDateString()
+      });
+      saveState('ir_mock_sessions', appState.mockSessions);
+      updateDashboardMetrics();
+    }
+
+    function nextMockQuestion() {
+      if (appState.mock.currentIndex < appState.mock.questions.length - 1) {
+        appState.mock.currentIndex++;
+        renderMockQuestionTurn();
+      } else {
+        alert('Mock interview session completed! Your readiness score has been updated on your dashboard.');
+        exitMockInterview();
+      }
+    }
+
+    function exitMockInterview() {
+      appState.mock.isActive = false;
+      document.getElementById('mock-active-panel').style.display = 'none';
+      document.getElementById('mock-setup-panel').style.display = 'block';
+    }
+
+    /* =========================================================
+       RESUME BUILDER
+       ========================================================= */
+
+    function syncResumeLive() {
+      const name = document.getElementById('res-input-name').value.trim() || 'YOUR NAME';
+      const email = document.getElementById('res-input-email').value.trim() || 'email@example.com';
+      const phone = document.getElementById('res-input-phone').value.trim() || '+91 98765 43210';
+      const loc = document.getElementById('res-input-location').value.trim() || 'Bengaluru, India';
+      const linkedin = document.getElementById('res-input-linkedin').value.trim() || 'linkedin.com/in/username';
+      const github = document.getElementById('res-input-github').value.trim() || '';
+
+      document.getElementById('res-preview-name').textContent = name;
+      document.getElementById('res-preview-contact').textContent = `${email} · ${phone}`;
+      document.getElementById('res-preview-location').textContent = loc;
+      document.getElementById('res-preview-links').textContent = linkedin + (github ? ` · ${github}` : '');
+
+      document.getElementById('res-preview-summary').textContent = document.getElementById('res-input-summary').value.trim() || 'Dedicated computer science student...';
+      document.getElementById('res-preview-skills-tech').textContent = document.getElementById('res-input-skills-tech').value.trim() || 'Python, SQL, HTML, CSS';
+      document.getElementById('res-preview-skills-tools').textContent = document.getElementById('res-input-skills-tools').value.trim() || 'Git, VS Code, Linux';
+
+      document.getElementById('res-preview-edu-degree').textContent = document.getElementById('res-input-edu-degree').value.trim() || 'BCA';
+      document.getElementById('res-preview-edu-college').textContent = document.getElementById('res-input-edu-college').value.trim() || 'College Name';
+      document.getElementById('res-preview-edu-year').textContent = document.getElementById('res-input-edu-year').value.trim() || '2022 - 2026';
+      document.getElementById('res-preview-edu-score').textContent = document.getElementById('res-input-edu-score').value.trim() || '8.4 CGPA';
+
+      document.getElementById('res-preview-proj1-title').textContent = document.getElementById('res-input-proj1-title').value.trim() || 'Project 1';
+      document.getElementById('res-preview-proj1-tech').textContent = document.getElementById('res-input-proj1-tech').value.trim() || 'Tech Stack';
+      document.getElementById('res-preview-proj1-desc').textContent = document.getElementById('res-input-proj1-desc').value.trim() || 'Project description...';
+
+      document.getElementById('res-preview-proj2-title').textContent = document.getElementById('res-input-proj2-title').value.trim() || 'Project 2';
+      document.getElementById('res-preview-proj2-tech').textContent = document.getElementById('res-input-proj2-tech').value.trim() || 'Tech Stack';
+      document.getElementById('res-preview-proj2-desc').textContent = document.getElementById('res-input-proj2-desc').value.trim() || 'Project description...';
+    }
+
+    function loadSampleResumeData() {
+      document.getElementById('res-input-name').value = 'Rahul Sharma';
+      document.getElementById('res-input-email').value = 'rahul.sharma@example.com';
+      document.getElementById('res-input-phone').value = '+91 98765 43210';
+      document.getElementById('res-input-location').value = 'Bengaluru, India';
+      document.getElementById('res-input-linkedin').value = 'linkedin.com/in/rahulsharma-dev';
+      document.getElementById('res-input-github').value = 'github.com/rahulsharma';
+      document.getElementById('res-input-summary').value = 'Motivated Computer Applications graduate with strong foundations in data structures, algorithms, and web development. Experienced in building practical apps in Python, SQL, and JavaScript. Eager to contribute clean code to an entry-level development role.';
+      document.getElementById('res-input-skills-tech').value = 'Python, JavaScript, SQL, HTML5, CSS3, Core Java';
+      document.getElementById('res-input-skills-tools').value = 'Git, GitHub, VS Code, MySQL Workbench, Postman';
+      document.getElementById('res-input-edu-degree').value = 'Bachelor of Computer Applications (BCA)';
+      document.getElementById('res-input-edu-college').value = 'Bangalore University';
+      document.getElementById('res-input-edu-year').value = '2022 - 2026';
+      document.getElementById('res-input-edu-score').value = '8.5 CGPA';
+      document.getElementById('res-input-proj1-title').value = 'Smart Campus Attendance Portal';
+      document.getElementById('res-input-proj1-tech').value = 'Python, Flask, SQLite';
+      document.getElementById('res-input-proj1-desc').value = 'Engineered a web portal for 3 student societies with automated QR check-in and monthly attendance report exports in CSV.';
+      document.getElementById('res-input-proj2-title').value = 'E-Commerce Product Search & Cart';
+      document.getElementById('res-input-proj2-tech').value = 'JavaScript, HTML5, CSS3';
+      document.getElementById('res-input-proj2-desc').value = 'Built a responsive single-page storefront with live multi-category filters, persistent local storage cart, and form validation.';
+
+      syncResumeLive();
+    }
+
+    /* =========================================================
+       HR PREPARATION VIEW
+       ========================================================= */
+
+    function initHRQuestions() {
+      const container = document.getElementById('hr-questions-accordion');
+      container.innerHTML = '';
+      HR_QUESTIONS.forEach((item, index) => {
+        const div = document.createElement('div');
+        div.className = 'card';
+        div.innerHTML = `
+          <div style="cursor: pointer;" onclick="toggleHRDetails('hr-detail-${item.id}')">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+              <div style="display: flex; align-items: center; gap: 0.5rem;">
+                <span class="tag tag-blue">Q${index + 1}</span>
+                <h3 style="font-size: 0.9375rem; font-weight: 700;">${item.q}</h3>
+              </div>
+              <span style="font-size: 0.75rem; color: var(--primary); font-weight: 700;">View Answer & Tips ▾</span>
+            </div>
+          </div>
+
+          <div id="hr-detail-${item.id}" style="display: ${index === 0 ? 'block' : 'none'}; margin-top: 1rem; padding-top: 1rem; border-top: 1px solid var(--slate-100); font-size: 0.8125rem;">
+            <div style="background: var(--slate-50); border: 1px solid var(--slate-200); border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 0.75rem;">
+              <strong>Interviewer Goal: </strong>${item.why}
+            </div>
+
+            <div style="background: var(--primary-light); border: 1px solid var(--primary-border); border-radius: 0.5rem; padding: 0.75rem; margin-bottom: 0.75rem;">
+              <strong style="color: #1e3a8a; display: block; margin-bottom: 0.25rem;">Model Answer (Conversational & Natural):</strong>
+              <p style="font-style: italic; color: var(--slate-800);">"${item.sample}"</p>
+            </div>
+
+            <div class="grid-1-2" style="margin-bottom: 0.75rem;">
+              <div style="background: var(--emerald-50); border: 1px solid #a7f3d0; border-radius: 0.5rem; padding: 0.75rem;">
+                <strong style="color: var(--emerald-700); display: block; margin-bottom: 0.25rem;">Key Points to Include:</strong>
+                <ul style="padding-left: 1.25rem; color: var(--slate-700);">
+                  ${item.points.map(p => `<li>${p}</li>`).join('')}
+                </ul>
+              </div>
+
+              <div style="background: var(--rose-50); border: 1px solid #fecdd3; border-radius: 0.5rem; padding: 0.75rem;">
+                <strong style="color: var(--rose-600); display: block; margin-bottom: 0.25rem;">Pitfalls to Avoid:</strong>
+                <ul style="padding-left: 1.25rem; color: var(--slate-700);">
+                  ${item.mistakes.map(m => `<li>${m}</li>`).join('')}
+                </ul>
+              </div>
+            </div>
+
+            <!-- Personalized Draft Box -->
+            <div>
+              <label style="font-size: 0.75rem; font-weight: 700; color: var(--slate-700); display: block; margin-bottom: 0.25rem;">Draft Your Own Honest Answer:</label>
+              <textarea id="hr-draft-${item.id}" rows="3" placeholder="Type your personal project and experience here..." oninput="saveHRDraft('${item.id}')"></textarea>
+            </div>
+          </div>
+        `;
+        container.appendChild(div);
+
+        // Load saved draft
+        try {
+          const saved = localStorage.getItem(`ir_hr_${item.id}`);
+          if (saved) {
+            setTimeout(() => {
+              const el = document.getElementById(`hr-draft-${item.id}`);
+              if (el) el.value = saved;
+            }, 100);
+          }
+        } catch {}
+      });
+    }
+
+    function toggleHRDetails(id) {
+      const el = document.getElementById(id);
+      el.style.display = el.style.display === 'none' ? 'block' : 'none';
+    }
+
+    function saveHRDraft(id) {
+      const val = document.getElementById(`hr-draft-${id}`).value;
+      saveState(`ir_hr_${id}`, val);
+    }
+
+    /* =========================================================
+       30-DAY PLANNER VIEW
+       ========================================================= */
+
+    function renderStudyTasks() {
+      const container = document.getElementById('study-tasks-list');
+      container.innerHTML = '';
+
+      const filtered = appState.studyTasks.filter(t => {
+        if (appState.plannerFilter === 'pending') return !t.done;
+        if (appState.plannerFilter === 'completed') return t.done;
+        return true;
+      });
+
+      if (filtered.length === 0) {
+        container.innerHTML = '<div class="card" style="text-align: center;"><p class="text-muted">No tasks found.</p></div>';
+        return;
+      }
+
+      filtered.forEach(task => {
+        const item = document.createElement('div');
+        item.className = 'card';
+        item.style.display = 'flex';
+        item.style.alignItems = 'center';
+        item.style.justifyContent = 'space-between';
+        item.style.gap = '0.75rem';
+        item.style.opacity = task.done ? '0.75' : '1';
+
+        item.innerHTML = `
+          <div style="display: flex; align-items: flex-start; gap: 0.75rem;">
+            <input type="checkbox" ${task.done ? 'checked' : ''} onchange="toggleTaskDone('${task.id}')" style="margin-top: 4px; width: 18px; height: 18px; cursor: pointer;" />
+            <div>
+              <div style="display: flex; gap: 0.5rem; align-items: center;">
+                <span class="tag tag-blue">${task.day ? `Day ${task.day}` : 'Custom'}</span>
+                <span style="font-size: 0.875rem; font-weight: 700; ${task.done ? 'text-decoration: line-through; color: var(--slate-400);' : ''}">${task.title}</span>
+              </div>
+              <p style="font-size: 0.75rem; color: var(--slate-600); margin-top: 2px;">${task.desc}</p>
+            </div>
+          </div>
+
+          <button onclick="deleteTask('${task.id}')" class="btn btn-secondary btn-sm" style="padding: 0.2rem 0.4rem; color: var(--slate-400);" title="Delete task">✕</button>
+        `;
+        container.appendChild(item);
+      });
+    }
+
+    function toggleTaskDone(id) {
+      appState.studyTasks = appState.studyTasks.map(t => t.id === id ? { ...t, done: !t.done } : t);
+      saveState('ir_study_tasks', appState.studyTasks);
+      renderStudyTasks();
+      updateDashboardMetrics();
+    }
+
+    function deleteTask(id) {
+      appState.studyTasks = appState.studyTasks.filter(t => t.id !== id);
+      saveState('ir_study_tasks', appState.studyTasks);
+      renderStudyTasks();
+      updateDashboardMetrics();
+    }
+
+    function filterPlanner(status) {
+      appState.plannerFilter = status;
+      document.querySelectorAll('#plan-btn-all, #plan-btn-pending, #plan-btn-completed').forEach(b => b.className = 'btn btn-secondary btn-sm');
+      document.getElementById(`plan-btn-${status}`).className = 'btn btn-primary btn-sm';
+      renderStudyTasks();
+    }
+
+    function resetDefaultPlan() {
+      if (confirm('Reset to the standard 30-Day Placement Plan?')) {
+        appState.studyTasks = DEFAULT_30_DAY_TASKS;
+        saveState('ir_study_tasks', appState.studyTasks);
+        renderStudyTasks();
+        updateDashboardMetrics();
+      }
+    }
+
+    function submitNewCustomTask() {
+      const title = document.getElementById('new-task-title').value.trim();
+      const desc = document.getElementById('new-task-desc').value.trim() || 'Custom goal';
+      if (!title) return;
+
+      appState.studyTasks.unshift({
+        id: `custom-${Date.now()}`,
+        title: title,
+        desc: desc,
+        done: false
+      });
+      saveState('ir_study_tasks', appState.studyTasks);
+      closeModal('add-task-modal');
+      document.getElementById('new-task-title').value = '';
+      document.getElementById('new-task-desc').value = '';
+      renderStudyTasks();
+      updateDashboardMetrics();
+    }
+
+    /* =========================================================
+       COMPANY PREPARATION
+       ========================================================= */
+
+    let selectedCompanyId = 'infosys';
+
+    function initCompanyTabs() {
+      const container = document.getElementById('company-tabs-container');
+      container.innerHTML = '';
+      COMPANY_DATA.forEach(c => {
+        const btn = document.createElement('button');
+        btn.className = `btn btn-sm ${selectedCompanyId === c.id ? 'btn-primary' : 'btn-secondary'}`;
+        btn.textContent = c.name;
+        btn.onclick = () => {
+          selectedCompanyId = c.id;
+          initCompanyTabs();
+          renderCompanyDetail();
+        };
+        container.appendChild(btn);
+      });
+      renderCompanyDetail();
+    }
+
+    function renderCompanyDetail() {
+      const comp = COMPANY_DATA.find(c => c.id === selectedCompanyId) || COMPANY_DATA[0];
+      const card = document.getElementById('company-detail-card');
+      card.innerHTML = `
+        <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
+          <h2 style="font-size: 1.25rem; font-weight: 800;">${comp.name} (${comp.badge})</h2>
+        </div>
+        <p style="font-size: 0.8125rem; color: var(--slate-600); line-height: 1.5; margin-bottom: 1rem;">
+          ${comp.overview}
+        </p>
+
+        <h3 style="font-size: 0.875rem; font-weight: 800; margin-bottom: 0.5rem;">Selection Rounds</h3>
+        <ul style="font-size: 0.8125rem; color: var(--slate-700); padding-left: 1.25rem; line-height: 1.6; margin-bottom: 1rem;">
+          ${comp.rounds.map(r => `<li>${r}</li>`).join('')}
+        </ul>
+
+        <div style="background: var(--primary-light); border: 1px solid var(--primary-border); border-radius: 0.75rem; padding: 0.75rem; font-size: 0.75rem; color: #1e40af; margin-bottom: 1rem;">
+          <strong>Preparation Strategy:</strong> ${comp.tips}
+        </div>
+
+        <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+          <button onclick="switchTab('aptitude')" class="btn btn-primary btn-sm">Take Timed Aptitude Quiz</button>
+          <button onclick="switchTab('mock')" class="btn btn-secondary btn-sm">Start Mock Interview</button>
+        </div>
+      `;
+    }
+
+    /* =========================================================
+       COMMUNICATION & PHRASES
+       ========================================================= */
+
+    function updateIntroPreview() {
+      const p = document.getElementById('intro-present-input').value.trim();
+      const past = document.getElementById('intro-past-input').value.trim();
+      const f = document.getElementById('intro-future-input').value.trim();
+      document.getElementById('intro-compiled-text').textContent = `"${p} ${past} ${f}"`;
+    }
+
+    function copyIntroText() {
+      const text = document.getElementById('intro-compiled-text').textContent.replace(/^"|"$/g, '');
+      navigator.clipboard.writeText(text);
+      const btn = document.getElementById('intro-copy-btn');
+      btn.textContent = 'Copied to Clipboard!';
+      setTimeout(() => btn.textContent = 'Copy to Clipboard', 2000);
+    }
+
+    function initWorkplacePhrases() {
+      const container = document.getElementById('workplace-phrases-list');
+      container.innerHTML = '';
+      WORKPLACE_PHRASES.forEach(item => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.style.padding = '0.75rem 1rem';
+        card.innerHTML = `
+          <div style="font-size: 0.75rem; font-weight: 700; color: var(--slate-500); margin-bottom: 0.25rem;">Situation: ${item.situation}</div>
+          <div class="grid-1-2" style="font-size: 0.75rem; margin-bottom: 0.25rem;">
+            <div style="color: var(--rose-600);"><strong style="display: block;">Avoid:</strong> ${item.casual}</div>
+            <div style="color: var(--emerald-700);"><strong style="display: block;">Say Instead:</strong> ${item.pro}</div>
+          </div>
+          <div style="font-size: 0.6875rem; color: var(--slate-400);">Why: ${item.why}</div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    /* =========================================================
+       JOB READINESS ARTICLES
+       ========================================================= */
+
+    function initJobGuides() {
+      const container = document.getElementById('readiness-articles-list');
+      container.innerHTML = '';
+      JOB_GUIDES.forEach(guide => {
+        const card = document.createElement('div');
+        card.className = 'card';
+        card.innerHTML = `
+          <h2 style="font-size: 1.1rem; font-weight: 800; margin-bottom: 0.35rem;">${guide.title}</h2>
+          <p style="font-size: 0.8125rem; color: var(--slate-600); margin-bottom: 0.75rem;">${guide.summary}</p>
+          <ul style="font-size: 0.8125rem; color: var(--slate-700); padding-left: 1.25rem; line-height: 1.6; margin-bottom: 0.75rem;">
+            ${guide.points.map(p => `<li>${p}</li>`).join('')}
+          </ul>
+          <div style="background: var(--primary-light); border-left: 3px solid var(--primary); padding: 0.5rem 0.75rem; font-size: 0.75rem; color: #1e40af;">
+            <strong>Takeaway: </strong>${guide.advice}
+          </div>
+        `;
+        container.appendChild(card);
+      });
+    }
+
+    /* =========================================================
+       DATA BACKUP & RESTORE
+       ========================================================= */
+
+    function exportDataJSON() {
+      const data = {
+        profile: appState.profile,
+        savedTechIds: appState.savedTechIds,
+        completedTechIds: appState.completedTechIds,
+        quizAttempts: appState.quizAttempts,
+        mockSessions: appState.mockSessions,
+        studyTasks: appState.studyTasks,
+        exportedAt: new Date().toISOString()
+      };
+      const blob = new Blob([JSON.stringify(data, null, 2)], { type: 'application/json' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'interviewready_backup.json';
+      a.click();
+      URL.revokeObjectURL(url);
+    }
+
+    function importDataJSON(e) {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const reader = new FileReader();
+      reader.onload = (event) => {
+        try {
+          const parsed = JSON.parse(event.target.result);
+          if (parsed.profile) appState.profile = parsed.profile;
+          if (parsed.savedTechIds) appState.savedTechIds = parsed.savedTechIds;
+          if (parsed.completedTechIds) appState.completedTechIds = parsed.completedTechIds;
+          if (parsed.quizAttempts) appState.quizAttempts = parsed.quizAttempts;
+          if (parsed.mockSessions) appState.mockSessions = parsed.mockSessions;
+          if (parsed.studyTasks) appState.studyTasks = parsed.studyTasks;
+
+          saveState('ir_profile', appState.profile);
+          saveState('ir_saved_tech', appState.savedTechIds);
+          saveState('ir_completed_tech', appState.completedTechIds);
+          saveState('ir_quiz_attempts', appState.quizAttempts);
+          saveState('ir_mock_sessions', appState.mockSessions);
+          saveState('ir_study_tasks', appState.studyTasks);
+
+          updateDashboardMetrics();
+          renderTechnicalQuestions();
+          renderStudyTasks();
+          alert('Data restored successfully!');
+          closeModal('progress-modal');
+        } catch {
+          alert('Invalid backup JSON file.');
+        }
+      };
+      reader.readAsText(file);
+    }
+
+    function clearAllDataConfirm() {
+      if (confirm('Clear all local study progress, bookmarks, and quiz attempts?')) {
+        try {
+          localStorage.clear();
+        } catch {}
+        appState.savedTechIds = [];
+        appState.completedTechIds = [];
+        appState.quizAttempts = [];
+        appState.mockSessions = [];
+        appState.studyTasks = DEFAULT_30_DAY_TASKS;
+        updateDashboardMetrics();
+        renderTechnicalQuestions();
+        renderStudyTasks();
+        closeModal('progress-modal');
+      }
+    }
+
+    function escapeHTML(str) {
+      return str.replace(/&/g, '&amp;').replace(/</g, '&lt;').replace(/>/g, '&gt;');
+    }
+
+    /* =========================================================
+       INITIALIZE ON LOAD
+       ========================================================= */
+
+    window.addEventListener('DOMContentLoaded', () => {
+      loadStoredData();
+      updateDashboardMetrics();
+      initTechnicalTopics();
+      renderTechnicalQuestions();
+      initAptitudeCategories();
+      initHRQuestions();
+      renderStudyTasks();
+      initCompanyTabs();
+      initWorkplacePhrases();
+      initJobGuides();
+      updateIntroPreview();
+      loadSampleResumeData();
+    });
+  </script>
+</body>
+</html>
